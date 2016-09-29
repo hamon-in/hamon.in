@@ -1,0 +1,19 @@
+# Environment
+^_env_config.yml
+^templates/\.htaccess$
+
+# Jekyll
+^_site
+
+# OS Cruft
+\.DS_Store$
+
+# Node.js
+node_modules/
+npm-debug\.log
+
+# Text Editors
+^\.tm_properties
+\.sublime-project$
+\.sublime-workspace$
+

@@ -1,0 +1,78 @@
+/* ========== */
+/* = Layout = */
+/* ========== */
+
+/* natural box layout model */
+*,
+input[type="search"] { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+
+/*  Base  */
+
+/* Ensure body stretches the full height of the page */
+html  { height: 100%; }
+body  { min-height: 100%; }
+
+body  { margin: 0 auto; }
+ul    { padding-left: 0; }
+ul    { list-style-type: none; }
+dl dd { margin-left: 0; }
+img   { vertical-align: middle; }
+
+hr    { clear: both; }
+
+// z-indices
+@layer-base: 0;
+@layer-one: 10;
+@layer-two: 20;
+
+
+
+// Helper Classes
+.contain-width {
+    img { max-width: 100%; height: auto; }
+}
+.embed-fluid {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: percentage(9/16);
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height:100% !important;
+    }
+}
+
+
+@container-hpad-xxs: 1.5rem;
+.container-values() {
+    @vpads:         1.5rem, 2rem, 2rem;
+    @hpads:         @container-hpad-xxs, 4rem, 2rem;
+    @max-widths:    30rem, 52rem, 60rem;
+    @breakpoints:   '',    @sm-min, @md-min;
+}
+.container {
+    margin: 0 auto;
+    .container-values();
+    .recurse-rule-breakpoints({
+        padding-left: @value;
+        padding-right:@value;
+    }, @hpads, @breakpoints);
+}
+.container {
+    .container-values();
+    .recurse-rule-breakpoints({
+        padding-top:   @value;
+        padding-bottom:@value;
+    }, @vpads, @breakpoints);
+}
+.container {
+    .container-values();
+    .recurse-rule-breakpoints({
+        max-width: @value;
+    }, @max-widths, @breakpoints);
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="has-no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{{ site.baseurl | append: '/build/style.min.' | append: site.data.css_hashsum | append: '.css' }}" type="text/css" data-instant-track>
+  <script src="{{ site.baseurl | append:'/js/libs/modernizr-custom.js' }}" data-no-instant data-instant-track></script>
+  
+  <!--
+    
+    IA, design and development
+    by Miranj http://miranj.in
+    
+  -->
+</head>
+<body class="{{ layout.body_class|default:'' }}">
+  <div id="page" class="{{ layout.page_class|default:'' }} clearfix">
+    
+    {{ content }}
+    
+  </div><!-- #page -->
+  
+  <!--[if (!IE)|(gt IE 8)]><!-->
+  <script src="{{ site.baseurl | append:'/js/libs/jquery-2.2.0.min.js' }}" data-no-instant data-instant-track></script>
+  <!--<![endif]-->
+  <!--[if lte IE 8]>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" data-no-instant data-instant-track></script>
+  <![endif]-->
+  <script src="{{ site.baseurl | append:'/build/app.min.' | append: site.data.js_hashsum | append: '.js' }}" data-no-instant data-instant-track></script>
+</body>
+</html>

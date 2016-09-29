@@ -1,0 +1,115 @@
+/* ============= */
+/* = Variables = */
+/* ============= */
+
+
+
+// Type
+
+@prose-stack:                   serif;
+@prose-webfont-stack:           @prose-stack;
+@prose-leading:                 1.45;
+
+@title-stack:                   sans-serif;
+@title-webfont-stack:           @title-stack;
+@title-leading:                 1.3;
+
+
+
+// Colours
+
+// Default
+@brand-one:     white;
+@brand-two:     black;
+@brand-three:   blue;
+@brand-four:    red;
+@brand-five:    green;
+
+
+
+// Layout breakpoints
+
+@xxs-min:   0em;
+@xs-min:    25em;     /* 400px */
+@sm-min:    47em;     /* 752px */
+@md-min:    70em;     /* 1120px */
+@lg-min:    85em;     /* 1360px */
+@xl-min:    100em;    /* 1600px */
+@xxl-min:   120em;    /* 1920px */
+
+@xxs-max:   (@xs-min - 0.01em);
+@xs-max:    (@sm-min - 0.01em);
+@sm-max:    (@md-min - 0.01em);
+@md-max:    (@lg-min - 0.01em);
+@lg-max:    (@xl-min - 0.01em);
+@xl-max:    (@xxl-min - 0.01em);
+
+@breakpoint_suffixes:  ~'-xs', ~'-sm', ~'-md', ~'-lg', ~'-xl';
+@breakpoint_widths: @xs-min, @sm-min, @md-min, @lg-min, @xl-min;
+
+
+
+// Function to recursively declare a set of rules
+// at every breakpoint, starting with the default
+// (no media query) breakpoint
+.recurse-breakpoints(@ruleset) {
+    .declare-breakpoint(@ruleset);
+    .declare-breakpoint(@ruleset, @xs-min, ~'-xs');
+    .declare-breakpoint(@ruleset, @sm-min, ~'-sm');
+    .declare-breakpoint(@ruleset, @md-min, ~'-md');
+    .declare-breakpoint(@ruleset, @lg-min, ~'-lg');
+    .declare-breakpoint(@ruleset, @xl-min, ~'-xl');
+}
+.declare-breakpoint(@ruleset, @suffix: ~'') {
+    @ruleset();
+}
+.declare-breakpoint(@ruleset, @min-width, @suffix) {
+    @media (min-width: @min-width) {
+        @ruleset();
+    }
+}
+
+
+
+// Recursilvely declare a rule set for an array of
+// values <=> (min-width) breakpoints
+// eg: ( { padding: @value }, (1rem, 2rem), (@xs-min, @md-min) )
+.recurse-rule-breakpoints(@ruleset, @values, @breakpoints) {
+    .recurse-rule-breakpoints-loop(@ruleset, @values, @breakpoints, length(@breakpoints));
+    
+    .recurse-rule-breakpoints-loop(@ruleset, @values, @breakpoints, @index) when (@index > 0) {
+        .recurse-rule-breakpoints-loop(@ruleset, @values, @breakpoints, @index - 1);
+        @value: extract(@values, @index);
+        @breakpoint: extract(@breakpoints, @index);
+        .declare-rule-breakpoint(@ruleset, @value, @breakpoint);
+    }
+    .declare-rule-breakpoint(@ruleset, @value, @breakpoint) when (@breakpoint = '') {
+        @ruleset();
+    }
+    .declare-rule-breakpoint(@ruleset, @value, @breakpoint) when (default()) {
+        @media (min-width: @breakpoint) {
+            @ruleset();
+        }
+    }
+}
+
+
+// Responsive helpers
+.xs-plus(@rules) { @media (min-width: @xs-min) { @rules(); } }
+.sm-plus(@rules) { @media (min-width: @sm-min) { @rules(); } }
+.md-plus(@rules) { @media (min-width: @md-min) { @rules(); } }
+
+
+// Font serving on Retina devices
+.retina-font-weight(@font-weight; @important:~'') {
+    @media (-webkit-min-device-pixel-ratio: 1.5),
+           (min--moz-device-pixel-ratio: 1.5),
+           (min-resolution: 1.5dppx),
+           (min-resolution: 144dpi)
+    {
+        & { font-weight: @font-weight @important; }
+    }
+}
+
+
+

@@ -1,0 +1,29 @@
+#
+# Jekyll Config
+# 
+
+
+# Data Model
+collections:
+
+
+# Defaults
+defaults:
+
+
+# Site settings
+name: Hamon
+permalink: :slug
+timezone: Asia/Kolkata
+baseurl: ""
+
+
+# Build settings
+source: ./templates
+destination: ./_site
+keep_files:
+  - build
+  - js
+  - img
+markdown_ext: "markdown,mkdown,mkdn,mkd,md,liquid"
+
