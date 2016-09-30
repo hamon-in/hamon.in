@@ -539,12 +539,12 @@ hr {
 /* ============== */
 /*  Families  */
 body {
-  font-family: serif;
+  font-family: GT Pressura Mono, serif;
   line-height: 1.45;
   font-weight: normal;
 }
 .wf-active body {
-  font-family: serif;
+  font-family: gt-pressura-mono, GT Pressura Mono, serif;
 }
 h1,
 h2,
@@ -558,7 +558,7 @@ input[type=submit],
 input[type=button],
 button,
 .button {
-  font-family: sans-serif;
+  font-family: GT Pressura Mono, sans-serif;
   line-height: 1.3;
   font-weight: bold;
 }
@@ -574,29 +574,29 @@ button,
 .wf-active input[type=button],
 .wf-active button,
 .wf-active .button {
-  font-family: sans-serif;
+  font-family: gt-pressura-mono, GT Pressura Mono, sans-serif;
 }
 table,
 th {
-  font-family: sans-serif;
+  font-family: GT Pressura Mono, sans-serif;
   line-height: 1.3;
 }
 .wf-active table,
 .wf-active th {
-  font-family: sans-serif;
+  font-family: gt-pressura-mono, GT Pressura Mono, sans-serif;
 }
 /* Declaring it separately to allow it to override the defaults declared just above */
 .prose-type {
-  font-family: serif;
+  font-family: GT Pressura Mono, serif;
 }
 .wf-active .prose-type {
-  font-family: serif;
+  font-family: gt-pressura-mono, GT Pressura Mono, serif;
 }
 .title-type {
-  font-family: sans-serif;
+  font-family: GT Pressura Mono, sans-serif;
 }
 .wf-active .title-type {
-  font-family: sans-serif;
+  font-family: gt-pressura-mono, GT Pressura Mono, sans-serif;
 }
 pre,
 code,
@@ -781,17 +781,22 @@ p {
 /* = Theme = */
 /* ========= */
 /* Base Styles */
-html {
-  background: black;
-  color: white;
+html,
+body {
+  background: white;
+  color: #121212;
 }
 body {
-  background-color: white;
-  color: black;
+  border: 8px solid #825C4E;
+  border: 0.5rem solid #825C4E;
+  margin: 8px;
+  margin: 0.5rem;
+  padding: 8px;
+  padding: 0.5rem;
 }
 a,
 a:visited {
-  color: blue;
+  color: #825C4E;
   text-decoration: underline;
 }
 /* Brand Styles */
@@ -799,10 +804,10 @@ a:visited {
   color: white;
 }
 .brand-two {
-  color: black;
+  color: #121212;
 }
 .brand-three {
-  color: blue;
+  color: #825C4E;
 }
 .brand-four {
   color: red;
@@ -811,23 +816,23 @@ a:visited {
   color: green;
 }
 .fill-brand-one {
-  color: black;
+  color: #121212;
   background: white;
 }
 .fill-brand-two {
   color: white;
-  background: black;
+  background: #121212;
 }
 .fill-brand-three {
   color: white;
-  background-color: blue;
+  background-color: #825C4E;
 }
 .fill-brand-four {
   color: white;
   background-color: red;
 }
 .fill-brand-five {
-  color: black;
+  color: #121212;
   background-color: green;
 }
 /* Animations */

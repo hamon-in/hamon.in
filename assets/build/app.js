@@ -85,6 +85,12 @@ $.isClickEventRequestingNewTab = function(event) {
     'use strict';
     
     var fonts = {
+            'gt-pressura-mono': [
+                { 'weight': 400 },
+                { 'weight': 400, 'style': 'italic' },
+                { 'weight': 700 },
+                { 'weight': 700, 'style': 'italic' },
+            ]
         },
         activeClass = 'wf-active',
         activeCookie = 'hamon-wf-cached',
