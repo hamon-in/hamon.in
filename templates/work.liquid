@@ -1,0 +1,115 @@
+---
+layout: base
+permalink: /work/
+
+title: Work
+
+brief: |
+  A selection of our projects and clients in the infrastructure,
+  automation and web domains.
+
+clients:
+  -
+    title: Eindhan
+    link: http://eindhan.com
+    projects:
+      -
+        title: Build prototype and initial version of the caditor.com application.
+        tech:
+          - Python/Django
+          - Go
+    testimonial:
+      body: |
+        We are a startup. I was looking for strong
+        foundations to start building my web application in terms of right
+        technology and best practices. Having worked closely with Noufal and
+        his team for two months, I can safely say that I could not have asked
+        for more. Noufal’s works was on-time, to spec and importantly with-in
+        budget. Through out the entire engagement Noufal and his team showed
+        100% availability and delivered quality work in the end. I wouldn't
+        think twice hire him again whenever there is a need or recommend to
+        others.
+      name: Vikram Choudermet
+      designation: CEO
+      org: Eindhan LTD, UK
+  -
+    title: Vyoma
+    link: http://www.vyoma-media.com
+    projects:
+      -
+        title: Expand existing infrastructure and applications used to deliver a country wide ad network based on raspberry Pi systems.
+        tech:
+          - Python
+
+---
+
+<header class="page-header">
+  <div class="container">
+    <h2 class="size-xxlarge title-one">
+      {{ page.title }}
+    </h2>
+    
+    {{ page.brief | markdownify }}
+  </div>
+</header>
+
+
+<h3 class="visuallyhidden">
+  Clients
+</h3>
+<ul>
+  {% for client in page.clients %}
+    <li class="wrapper">
+      <article class="container">
+        <h1 class="title-two">
+          {% if client.link %}
+            <a class="silent" href="{{ client.link }}">
+              {{ client.title }}
+            </a>
+          {% else %}
+            {{ client.title }}
+          {% endif %}
+        </h1>
+        
+        {% if client.projects %}
+          <h2 class="visuallyhidden">
+            Projects
+          </h2>
+          
+          <ul class="project-list">
+            {% for project in client.projects %}
+              <li>
+                {{ project.title }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        
+        {% if client.testimonial %}
+          <div class="testimonial">
+            <blockquote>
+              {{ client.testimonial.body | markdownify }}
+            </blockquote>
+            
+            <div class="testimonial-attribution">
+              <h4>
+                {{ client.testimonial.name }}
+              </h4>
+              <i>
+                {{ client.testimonial.designation }},
+                {{ client.testimonial.org }}
+              </i>
+            </div>
+          </div>
+        {% endif %}
+        
+        {% if client.link %}
+          <a href="{{ client.link }}">
+            {% include prettyurl.liquid url=client.link %}
+          </a>
+        {% endif %}
+      </article>
+    </li>
+  {% endfor %}
+</ul>
+

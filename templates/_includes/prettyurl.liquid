@@ -1,0 +1,10 @@
+{%
+  assign url =
+    include.url
+  | replace: 'https://www.', ''
+  | replace: 'http://www.', ''
+  | replace: 'https://', ''
+  | replace: 'http://', ''
+%}
+
+{{ url }}

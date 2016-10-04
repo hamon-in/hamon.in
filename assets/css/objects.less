@@ -1,2 +1,65 @@
 /* Objects */
 
+
+
+.page-header {
+    &:extend(.fill-brand-three);
+    padding-top: 25vh;
+}
+.wrapper {
+    border: 0.15rem solid @brand-three;
+    margin: 0.35rem;
+    padding:1.00rem 0;
+    // > .container {
+    //     // margin: -1.5rem;
+    // }
+}
+
+
+
+// objects
+.project-list {
+    padding-left: 1.5rem;
+    > li {
+        list-style-type: circle;
+    }
+}
+
+.testimonial {
+    margin-left: 1.5rem;
+    blockquote,
+    blockquote > p:last-child {
+        margin-bottom: 0;
+    }
+    blockquote {
+        font-style: italic;
+        position: relative;
+        z-index: @layer-one;
+    }
+    &:before {
+        content: "“";
+        position: absolute;
+        font-size: 15rem;
+        line-height: 0;
+        opacity: 0.2;
+        color: @brand-three;
+        margin-left: -0.2em;
+        margin-top: 0.2em;
+        z-index: @layer-base;
+    }
+}
+.testimonial-attribution {
+    margin-left: auto;
+    max-width: 15rem;
+    margin-bottom: 3rem;
+    
+    &:before {
+        content: "—";
+        position: absolute;
+        margin-left: -1rem;
+        margin-top: -0.25rem;
+    }
+    
+    > h4 { margin-bottom: 0; }
+    > i { font-style: normal; }
+}
