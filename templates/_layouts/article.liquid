@@ -1,0 +1,27 @@
+---
+layout: base
+---
+
+
+
+<article>
+  <header class="page-header">
+    <div class="container">
+      <h1 class="size-xxlarge title-one">
+        {{ page.title | smartify }}
+      </h1>
+      <p class="size-small">
+        <time>
+          {{ page.date | date: '%b %-d, %Y' }}
+        </time>
+      </p>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="prose">
+      {{ content }}
+    </div>
+  </div>
+  
+</article>

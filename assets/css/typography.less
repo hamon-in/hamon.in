@@ -50,10 +50,12 @@ th {
 
 pre,
 code,
-.monospace { font-family: Menlo, Monaco, Consolas, Bitstream Vera Sans Mono, monospace; }
+.monospace {
+    font-family: @code-stack;
+    .wf-active & { font-family: @code-webfont-stack; }
+}
 code {
-    font-size: 0.7em;
-    background-color: rgba(245,245,245,0.5);
+    background-color: @brand-five-light;
     padding: 0.2em;
 }
 
@@ -148,15 +150,23 @@ p { margin: 0 0 3rem; }
     font-weight: normal;
 }
 .prose {
-    h1,
-    h2,
-    h3,
-    h4 {
-        &:first-child { margin-top: 0; }
+    // h1,
+    // h2,
+    // h3,
+    // h4 {
+    //     &:first-child { margin-top: 0; }
+    // }
+    
+    h3 {
+        &:extend(.size-xlarge);
+        text-transform: uppercase;
+        font-weight: normal;
+        border-bottom: 1px solid lighten(@brand-two, 70%);
+        padding-bottom:0.75rem;
+        margin-bottom: 0.75rem;
     }
     
-    h3 { margin-bottom: 0.25rem; }
-    
+    p + p  { margin-top: -1.5rem; }
     p + ol,
     p + ul { margin-top: -1rem; }
     
@@ -174,6 +184,21 @@ p { margin: 0 0 3rem; }
     ol ul:last-child,
     ul ol:last-child,
     ul ul:last-child     { margin-bottom: 0; }
+    
+    figure.highlight { margin: 0; }
+    pre {
+        background: @brand-five-light;
+        border: solid @brand-five-light;
+        border-width: 0 1rem;
+        padding: 1.5rem 0.5rem;
+        margin: -1rem -1.5rem 2rem;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        code {
+            background: none;
+            padding: 0;
+        }
+    }
     
     hr {
         width: 3rem;
