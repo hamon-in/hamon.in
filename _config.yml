@@ -5,10 +5,19 @@
 
 # Data Model
 collections:
+  articles:
+    title: Articles
+    output: true
 
 
 # Defaults
 defaults:
+  -
+    scope:
+      path: "_articles"
+      type: "articles"
+    values:
+      layout: "article"
 
 
 # Site settings
