@@ -11,10 +11,11 @@ Install
 1.  Ensure the following requirements are installed:
     - Ruby 2.3+
     - Jekyll 3.2+
+    and that the generated files will be accessed via Apache.
     
 2.  Build the site
         
-        $ jekyll build
+        $ JEKYLL_ENV=production jekyll build
     
 3.  Create an Apache config file and update the `RewriteBase`
     directive if required.
@@ -47,5 +48,6 @@ Development
 
 4.  Enable continuous builds of the assets
     
+        $ cd assets
         $ gulp
 
