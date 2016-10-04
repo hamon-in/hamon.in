@@ -6,5 +6,37 @@ layout: base
   <div class="container">
     <h1>Hamon</h1>
     <a href="{{ site.baseurl | append: '/work' }}">Work</a>
+    
+    
+    <dl>
+      {% for collection in site.collections %}
+        <dt>
+          {% assign slug = collection.title | slugify %}
+          <a href="{{ site.baseurl | append: '/' | append: slug }}">
+            {{ collection.title }}
+          </a>
+        </dt>
+        <dd>
+          {% if collection.output %}
+            <ul>
+              {% for doc in collection.docs %}
+                <li>
+                  <a href="{{ site.baseurl | append: doc.url }}">
+                    {{ doc.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <dl>
+              {% for doc in collection.docs %}
+                <dt>{{ doc.title }}</dt>
+                <dd>{{ doc.content }}</dd>
+              {% endfor %}
+            </dl>
+          {% endif %}
+        </dd>
+      {% endfor %}
+    </dl>
   </div>
 </div>
