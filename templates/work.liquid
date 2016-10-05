@@ -40,6 +40,13 @@ clients:
         title: Expand existing infrastructure and applications used to deliver a country wide ad network based on raspberry Pi systems.
         tech:
           - Python
+  -
+    title: FOSS Contributions
+    projects:
+      - title: Command line invoice and timesheet management
+        link: http://github.com/hamon-in/invoice
+      - title: Low level port of the python psutil library.
+        link: http://github.com/hamon-in/cpslib
 
 ---
 
@@ -55,10 +62,6 @@ clients:
   </div>
 </header>
 
-
-<h3 class="visuallyhidden">
-  Clients
-</h3>
 <ul>
   {% for client in page.clients %}
     <li class="wrapper">
@@ -83,9 +86,16 @@ clients:
               {% for project in client.projects %}
                 <li>
                   {{ project.title }}
-                  <b class="title-label">
-                    {{ project.tech | join: ', ' }}
-                  </b>
+                  {% if project.tech %}
+                    <b class="title-label">
+                      {{ project.tech | join: ', ' }}
+                    </b>
+                  {% endif %}
+                  {% if project.link %}
+                    <a href="{{ project.link }}">
+                      {% include prettyurl.liquid url=project.link %}
+                    </a>
+                  {% endif %}
                 </li>
               {% endfor %}
             </ul>
