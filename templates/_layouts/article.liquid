@@ -10,8 +10,17 @@ layout: base
       <h1 class="size-xxlarge title-one">
         {{ page.title | smartify }}
       </h1>
-      <p class="size-small">
-        <time>
+      <p class="indent-one">
+        {% if page.author %}
+          {% if page.author.link %}
+            <a href="{{ page.author.link }}">
+              {{ page.author.name }}</a>
+          {% else %}
+            {{ page.author.name }}
+          {% endif %}
+          <br>
+        {% endif %}
+        <time class="size-small">
           {{ page.date | date: '%b %-d, %Y' }}
         </time>
       </p>

@@ -31,7 +31,7 @@ title: Articles & Guides
   <ul class="container">
     {% for article in site.articles reversed %}
       {% assign link = site.baseurl | append: article.url %}
-      <li>
+      <li class="teaser-spacer">
         <h3 class="title-three">
           <a href="{{ link }}">
             {{ article.title | smartify }}
@@ -41,6 +41,13 @@ title: Articles & Guides
         <div class="indent-one prose">
           {{ article.brief | markdownify }}
           <p class="collapse">
+            {% if article.author %}
+              <span class="size-small">
+                by
+                {{ article.author.name }}
+              </span>
+              <br>
+            {% endif %}
             <a class="silent" href="{{ link }}">
               <time class="title-fineprint size-xsmall">
                 {{ article.date | date: '%b %-d, %Y' }}

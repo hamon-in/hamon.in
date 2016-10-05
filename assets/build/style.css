@@ -501,6 +501,14 @@ hr {
   padding-left: 60px;
   padding-left: 4rem;
 }
+.embed-spacer {
+  margin-bottom: 30px;
+  margin-bottom: 2rem;
+}
+.teaser-spacer {
+  margin-bottom: 75px;
+  margin-bottom: 5rem;
+}
 .container {
   margin: 0 auto;
   padding-left: 22.5px;
@@ -751,7 +759,7 @@ p + .collapse {
 .title-three,
 .prose h4 {
   line-height: 1.2;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.25em;
 }
 .title-three a {
   display: block;
