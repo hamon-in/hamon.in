@@ -47,6 +47,10 @@ team:
         mostly in infrastructure engineering positions. He's also active
         with open source communities and was the founder of PyCon India
         in 2009.
+      links:
+        nibrahim.net.in: http://nibrahim.net.in/
+        Twitter: http://twitter.com/noufalibrahim
+        GitHub: http://github.com/nibrahim/
     -
       name: Shamlik T
       bio: |
@@ -129,6 +133,18 @@ team:
           </h4>
           <div class="indent-one prose">
             {{ person.bio | markdownify }}
+            
+            {% if person.links %}
+              <ul class="collapse">
+                {% for link in person.links %}
+                  <li>
+                    <a href="{{ link[1] }}">
+                      {{ link[0] }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
           </div>
         </li>
       {% endfor %}
