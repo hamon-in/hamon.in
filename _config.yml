@@ -8,6 +8,9 @@ collections:
   articles:
     title: Articles
     output: true
+  topics:
+    title: Topics
+    output: true
 
 
 # Defaults
