@@ -92,7 +92,7 @@ clients:
                     </b>
                   {% endif %}
                   {% if project.link %}
-                    <a href="{{ project.link }}">
+                    <a class="truncate" href="{{ project.link }}">
                       {% include prettyurl.liquid url=project.link %}
                     </a>
                   {% endif %}

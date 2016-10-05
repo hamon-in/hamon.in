@@ -483,6 +483,12 @@ hr {
   width: 100% !important;
   height: 100% !important;
 }
+.truncate {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 .indent-one,
 .prose ol,
 .prose ul,
