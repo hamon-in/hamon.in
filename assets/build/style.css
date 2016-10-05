@@ -902,6 +902,8 @@ a.silent {
   padding: 1.00rem 0;
 }
 .bullet-list a {
+  display: block;
+  padding: 0.25em 0;
   text-decoration: none;
 }
 .bullet-list a:after {
