@@ -1,0 +1,132 @@
+---
+
+layout: base
+permalink: /about/
+
+title: About
+
+about:
+  - 
+    title: What we do
+    body: |
+      The best infrastructure is invisible.  It does its work and stays
+      in the limelight while providing the foundation for customer facing
+      applications to run.  Good infrastructure leverages automation and
+      has makes the computer do most of the work leaving the people to
+      focus on the creative part of the enterprise. 
+      
+      Hamon draws on its experience in automation and infrastructure to
+      build custom solutions that allow our clients to automate critical
+      parts of their infrastructure. 
+  -
+    title: How we work
+    body: |
+      We take an attitude to software development similar to what a
+      swordsmith takes to his work. A combination of efficient
+      professionalism and creativity.
+      
+      We allocate small efficient teams to work on each of our projects
+      and follow industry best practices to make sure that our work is
+      transparent, within budget and on time.
+
+team:
+  title: Our Team
+  members:
+    -
+      name: Noufal Ibrahim
+      bio: |
+        The founder of Hamon. Noufal is an industry
+        veteran with over 15 years of experience. He has worked for Cisco
+        systems, Synopsys, The Internet Archive and other organisations
+        mostly in infrastructure engineering positions. He's also active
+        with open source communities and was the founder of PyCon India
+        in 2009.
+    -
+      name: Shamlik T
+      bio: |
+        Shamlik is an ardent programmer who always tries to write optimized code.
+        He is particularly interested in automation and IoT. He enjoys
+        organising tech. events and is an amateur photographer. He graduated
+        from MES college of engineering.
+    -
+      name: Suroor Hussain
+      bio: |
+        Suroor is an avid programmer and a lifelong learner. He enjoys coding in
+        python and is interested in cryptography and machine learning.
+        He completed his engineering degree from KMCT college of engineering
+        and in his free time, enjoys travelling.
+    -
+      name: Labeeb Ibrahim
+      bio: |
+        Labeeb is a passionate technologist, who believes in creating
+        secure and smart software/hardware platforms to ease human
+        life. Python is his strong pull and he has a thing for scientific
+        computing. He completed his Masters in Engineering from NITC. Outside
+        work, he contributes to open source and programming communities.
+    -
+      name: Mohammed Irfan
+      bio: |
+        Mohammed Irfan is a passionate programmer who believes in creating
+        optimised, robust and secure applications. He is proficient in Python,
+        C, Javascript and has created apps for the PC, web and Android.
+        He completed his bachelors in computer science engineering from AWH
+        engineering college. During his spare time, he enjoys playing video games,
+        contributing to open source and reading books.
+
+---
+
+
+<header class="page-header">
+  <div class="container">
+    <h2 class="size-xxlarge title-one">
+      {{ page.title }}
+    </h2>
+    
+    <ul class="bullet-list">
+      {% assign nav_items = page.about | push: page.team %}
+      {% for section in nav_items %}
+        <li>
+          <a href="#{{ section.title | slugify }}">
+            {{ section.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</header>
+
+<section class="wrapper">
+  <ul class="container">
+    {% for section in page.about %}
+      <li id="{{ section.title | slugify }}">
+        <h3 class="size-xlarge title-four">
+          {{ section.title }}
+        </h3>
+        <div class="prose">
+          {{ section.body | markdownify }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="{{ page.team.title | slugify }}" class="wrapper">
+  <div class="container">
+    <h3 class="size-xlarge title-four">
+      {{ page.team.title }}
+    </h3>
+    <ul>
+      {% for person in page.team.members %}
+        <li>
+          <h4 class="title-three">
+            {{ person.name }}
+          </h4>
+          <div class="indent-one prose">
+            {{ person.bio | markdownify }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+

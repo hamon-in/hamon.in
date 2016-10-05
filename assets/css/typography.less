@@ -147,7 +147,17 @@ p { margin: 0 0 3rem; }
 .title-two {
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+.title-three {
+    &:extend(.title-two);
+    margin-bottom: 0.5em;
+}
+.title-four {
+    text-transform: uppercase;
     font-weight: normal;
+    border-bottom: 1px solid lighten(@brand-two, 70%);
+    padding-bottom:0.75rem;
+    margin-bottom: 0.75rem;
 }
 .prose {
     // h1,
@@ -159,11 +169,7 @@ p { margin: 0 0 3rem; }
     
     h3 {
         &:extend(.size-xlarge);
-        text-transform: uppercase;
-        font-weight: normal;
-        border-bottom: 1px solid lighten(@brand-two, 70%);
-        padding-bottom:0.75rem;
-        margin-bottom: 0.75rem;
+        &:extend(.title-four);
     }
     
     p + p  { margin-top: -1.5rem; }

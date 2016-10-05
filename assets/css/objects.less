@@ -4,11 +4,12 @@
 
 .page-header {
     &:extend(.fill-brand-three);
+    a:extend(.fill-brand-three a) {}
     padding-top: 25vh;
 }
 .wrapper {
-    border: 0.15rem solid @brand-three;
-    margin: 0.35rem;
+    border: 0.5rem solid @brand-three;
+    // margin: 0.35rem;
     padding:1.00rem 0;
     // > .container {
     //     // margin: -1.5rem;
@@ -18,10 +19,13 @@
 
 
 // objects
-.project-list {
-    padding-left: 1.5rem;
-    > li {
-        list-style-type: circle;
+.indent-one { padding-left: 2rem; }
+.indent-two { padding-left: 4rem; }
+.bullet-list {
+    &:extend(.indent-one);
+    a {
+        text-decoration: none;
+        &:after { content: "→"; }
     }
 }
 

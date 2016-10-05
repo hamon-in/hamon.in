@@ -713,11 +713,15 @@ p {
   text-transform: uppercase;
   font-weight: normal;
 }
-.title-two {
+.title-two,
+.title-three {
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-weight: normal;
 }
+.title-three {
+  margin-bottom: 0.5em;
+}
+.title-four,
 .prose h3 {
   text-transform: uppercase;
   font-weight: normal;
@@ -837,6 +841,10 @@ a.silent {
   color: white;
   background-color: #825C4E;
 }
+.fill-brand-three a,
+.page-header a {
+  color: inherit;
+}
 .fill-brand-four {
   color: white;
   background-color: red;
@@ -851,19 +859,25 @@ a.silent {
   padding-top: 25vh;
 }
 .wrapper {
-  border: 2.25px solid #825C4E;
-  border: 0.15rem solid #825C4E;
-  margin: 5.25px;
-  margin: 0.35rem;
+  border: 7.5px solid #825C4E;
+  border: 0.5rem solid #825C4E;
   padding: 15px 0;
   padding: 1.00rem 0;
 }
-.project-list {
-  padding-left: 22.5px;
-  padding-left: 1.5rem;
+.indent-one,
+.bullet-list {
+  padding-left: 30px;
+  padding-left: 2rem;
 }
-.project-list > li {
-  list-style-type: circle;
+.indent-two {
+  padding-left: 60px;
+  padding-left: 4rem;
+}
+.bullet-list a {
+  text-decoration: none;
+}
+.bullet-list a:after {
+  content: "→";
 }
 .testimonial {
   margin-left: 22.5px;
