@@ -56,7 +56,7 @@ code,
 }
 code {
     background-color: @brand-five-light;
-    padding: 0.2em;
+    padding: 0 0.2em 0.1em;
 }
 
 
@@ -78,7 +78,7 @@ code {
     h1, .size-xlarge   { font-size: 1.777rem; }
     h2, .size-large    { font-size: 1.333rem; }
     body,.size-regular { font-size: 1.125rem; }
-        .size-small    { font-size: 1rem; }
+        .size-small    { font-size: 0.9rem; }
         .size-xsmall   { font-size: 0.75rem; }
     
     html    { font-size: 15px;     line-height: @prose-leading; }
@@ -132,7 +132,10 @@ dl,
 blockquote,
 pre,
 figure,
-p { margin: 0 0 3rem; }
+p {
+    margin: 0 0 3rem;
+    + .collapse { margin-top: -3rem !important; }
+}
 
 
 
@@ -150,7 +153,12 @@ p { margin: 0 0 3rem; }
 }
 .title-three {
     &:extend(.title-two);
+    line-height: 1.2;
     margin-bottom: 0.5em;
+    a {
+        display: block;
+        text-decoration: none;
+    }
 }
 .title-four {
     text-transform: uppercase;
@@ -158,6 +166,11 @@ p { margin: 0 0 3rem; }
     border-bottom: 1px solid lighten(@brand-two, 70%);
     padding-bottom:0.75rem;
     margin-bottom: 0.75rem;
+}
+.title-label {
+    // font-weight: bold;
+    text-transform: uppercase;
+    // color: @brand-five-dark;
 }
 .prose {
     // h1,

@@ -610,7 +610,7 @@ code,
 }
 code {
   background-color: #f1f1f1;
-  padding: 0.2em;
+  padding: 0 0.2em 0.1em;
 }
 /* Helpers */
 .quo {
@@ -653,8 +653,8 @@ body,
   font-size: 1.125rem;
 }
 .size-small {
-  font-size: 15px;
-  font-size: 1rem;
+  font-size: 13.5px;
+  font-size: 0.9rem;
 }
 .size-xsmall {
   font-size: 11.25px;
@@ -708,6 +708,16 @@ p {
   margin: 0 0 45px;
   margin: 0 0 3rem;
 }
+ul + .collapse,
+ol + .collapse,
+dl + .collapse,
+blockquote + .collapse,
+pre + .collapse,
+figure + .collapse,
+p + .collapse {
+  margin-top: -45px !important;
+  margin-top: -3rem !important;
+}
 /* Styles */
 .title-one {
   text-transform: uppercase;
@@ -721,7 +731,12 @@ p {
 }
 .title-three,
 .prose h4 {
+  line-height: 1.2;
   margin-bottom: 0.5em;
+}
+.title-three a {
+  display: block;
+  text-decoration: none;
 }
 .title-four,
 .prose h3 {
@@ -732,6 +747,9 @@ p {
   padding-bottom: 0.75rem;
   margin-bottom: 11.25px;
   margin-bottom: 0.75rem;
+}
+.title-label {
+  text-transform: uppercase;
 }
 .prose p + p {
   margin-top: -22.5px;
