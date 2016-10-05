@@ -108,7 +108,7 @@ team:
 <section class="wrapper">
   <ul class="container">
     {% for section in page.about %}
-      <li id="{{ section.title | slugify }}">
+      <li id="{{ section.title | slugify }}" class="teaser-spacer">
         <h3 class="size-xlarge title-four">
           {{ section.title }}
         </h3>
