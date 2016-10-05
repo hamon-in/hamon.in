@@ -4,6 +4,10 @@ title: "SQLAlchemy and full text searching in postgresql"
 
 date: "2013-11-29 11:28:48 +0530"
 
+author:
+  name: Noufal Ibrahim
+  link: https://twitter.com/noufalibrahim
+
 brief: |
   A report on how we added a new type to SQLAlchemy to
   get it working for an  internal project.
