@@ -4,6 +4,9 @@ title: "Text processing in UNIX"
 
 date: "2013-09-03 16:12:52 +0530"
 
+topics:
+  - /topics/technology
+
 ---
 
 

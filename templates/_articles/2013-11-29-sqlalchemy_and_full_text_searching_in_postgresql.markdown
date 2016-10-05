@@ -4,6 +4,13 @@ title: "SQLAlchemy and full text searching in postgresql"
 
 date: "2013-11-29 11:28:48 +0530"
 
+brief: |
+  A report on how we added a new type to SQLAlchemy to
+  get it working for an  internal project.
+
+topics:
+  - /topics/technology
+
 ---
 
 ### Introduction
