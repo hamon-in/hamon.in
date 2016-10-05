@@ -13,6 +13,17 @@ title: Articles & Guides
     <h2 class="size-xxlarge title-one">
       {{ page.title }}
     </h2>
+    
+    <ul class="bullet-list">
+      {% assign nav_items = site.topics %}
+      {% for item in nav_items %}
+        <li>
+          <a href="{{ site.baseurl | append: item.url }}">
+            {{ item.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 </header>
 
