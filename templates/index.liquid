@@ -6,10 +6,11 @@ layout: base
   <div class="container">
     <h1>Hamon</h1>
     
-    <a href="{{ site.baseurl | append: '/work' }}">Work</a>
-    <a href="{{ site.baseurl | append: '/about' }}">About</a>
+    
     
     <dl>
+      <dt><a href="{{ site.baseurl | append: '/about/' }}">About</a></dt>
+      <dt><a href="{{ site.baseurl | append: '/work/' }}">Work</a></dt>
       {% for collection in site.collections %}
         <dt>
           {% assign slug = collection.title | slugify %}
@@ -17,7 +18,7 @@ layout: base
             {{ collection.title }}
           </a>
         </dt>
-        <dd>
+        <dd class="prose">
           {% if collection.output %}
             <ul>
               {% for doc in collection.docs %}
