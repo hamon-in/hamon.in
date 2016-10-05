@@ -49,7 +49,9 @@ clients:
       {{ page.title }}
     </h2>
     
-    {{ page.brief | markdownify }}
+    <div class="indent-one">
+      {{ page.brief | markdownify }}
+    </div>
   </div>
 </header>
 
@@ -61,7 +63,7 @@ clients:
   {% for client in page.clients %}
     <li class="wrapper">
       <article class="container">
-        <h1 class="title-two">
+        <h1 class="title-four">
           {% if client.link %}
             <a class="silent" href="{{ client.link }}">
               {{ client.title }}
@@ -72,17 +74,22 @@ clients:
         </h1>
         
         {% if client.projects %}
-          <h2 class="visuallyhidden">
+          <h2 class="title-three size-regular">
             Projects
           </h2>
           
-          <ul class="project-list">
-            {% for project in client.projects %}
-              <li>
-                {{ project.title }}
-              </li>
-            {% endfor %}
-          </ul>
+          <div class="prose">
+            <ul>
+              {% for project in client.projects %}
+                <li>
+                  {{ project.title }}
+                  <b class="title-label">
+                    {{ project.tech | join: ', ' }}
+                  </b>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         {% endif %}
         
         {% if client.testimonial %}

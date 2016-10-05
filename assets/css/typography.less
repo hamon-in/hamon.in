@@ -167,10 +167,16 @@ p {
     padding-bottom:0.75rem;
     margin-bottom: 0.75rem;
 }
-.title-label {
+.title-fineprint {
     // font-weight: bold;
     text-transform: uppercase;
     // color: @brand-five-dark;
+}
+.title-label {
+    &:extend(.size-small);
+    color: @brand-three;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .prose {
     // h1,

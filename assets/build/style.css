@@ -483,6 +483,18 @@ hr {
   width: 100% !important;
   height: 100% !important;
 }
+.indent-one,
+.prose ol,
+.prose ul,
+.prose li li,
+.bullet-list {
+  padding-left: 30px;
+  padding-left: 2rem;
+}
+.indent-two {
+  padding-left: 60px;
+  padding-left: 4rem;
+}
 .container {
   margin: 0 auto;
   padding-left: 22.5px;
@@ -652,7 +664,8 @@ body,
   font-size: 16.875px;
   font-size: 1.125rem;
 }
-.size-small {
+.size-small,
+.title-label {
   font-size: 13.5px;
   font-size: 0.9rem;
 }
@@ -748,8 +761,13 @@ p + .collapse {
   margin-bottom: 11.25px;
   margin-bottom: 0.75rem;
 }
-.title-label {
+.title-fineprint {
   text-transform: uppercase;
+}
+.title-label {
+  color: #825C4E;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .prose p + p {
   margin-top: -22.5px;
@@ -877,27 +895,11 @@ a.silent {
   padding: 15px 0;
   padding: 1.00rem 0;
 }
-.indent-one,
-.prose ol,
-.prose ul,
-.prose li li,
-.bullet-list {
-  padding-left: 30px;
-  padding-left: 2rem;
-}
-.indent-two {
-  padding-left: 60px;
-  padding-left: 4rem;
-}
 .bullet-list a {
   text-decoration: none;
 }
 .bullet-list a:after {
   content: "→";
-}
-.testimonial {
-  margin-left: 22.5px;
-  margin-left: 1.5rem;
 }
 .testimonial blockquote,
 .testimonial blockquote > p:last-child {
