@@ -171,17 +171,19 @@ p { margin: 0 0 3rem; }
         &:extend(.size-xlarge);
         &:extend(.title-four);
     }
+    h4 {
+        &:extend(.title-three);
+    }
     
     p + p  { margin-top: -1.5rem; }
     p + ol,
     p + ul { margin-top: -1rem; }
     
     ol,
-    ul           { padding-left: 1em; }
-    li           { margin-bottom:0.5em; }
-    li li        { margin-left:  0.5em; }
+    ul,
+    li li        { &:extend(.indent-one); }
     ol           { list-style-type: decimal; }
-    ul           { list-style-type: circle; }
+    ul li:before { content: "–"; position: absolute; margin-left: -2rem; }
     ol ol,
     ol ul,
     ul ol,

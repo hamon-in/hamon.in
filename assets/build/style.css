@@ -714,11 +714,13 @@ p {
   font-weight: normal;
 }
 .title-two,
-.title-three {
+.title-three,
+.prose h4 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.title-three {
+.title-three,
+.prose h4 {
   margin-bottom: 0.5em;
 }
 .title-four,
@@ -740,21 +742,14 @@ p {
   margin-top: -15px;
   margin-top: -1rem;
 }
-.prose ol,
-.prose ul {
-  padding-left: 1em;
-}
-.prose li {
-  margin-bottom: 0.5em;
-}
-.prose li li {
-  margin-left: 0.5em;
-}
 .prose ol {
   list-style-type: decimal;
 }
-.prose ul {
-  list-style-type: circle;
+.prose ul li:before {
+  content: "–";
+  position: absolute;
+  margin-left: -30px;
+  margin-left: -2rem;
 }
 .prose ol ol,
 .prose ol ul,
@@ -865,6 +860,9 @@ a.silent {
   padding: 1.00rem 0;
 }
 .indent-one,
+.prose ol,
+.prose ul,
+.prose li li,
 .bullet-list {
   padding-left: 30px;
   padding-left: 2rem;
