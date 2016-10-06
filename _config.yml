@@ -21,6 +21,12 @@ defaults:
       type: "articles"
     values:
       layout: "article"
+  -
+    scope:
+      path: "_topics"
+      type: "topics"
+    values:
+      layout: "topic"
 
 
 # Site settings

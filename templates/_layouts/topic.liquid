@@ -1,0 +1,27 @@
+---
+
+layout: base
+
+---
+
+
+<header class="page-header">
+  <div class="container">
+    <h2 class="size-xxlarge title-one">
+      {{ page.title }}
+    </h2>
+    
+    <div class="indent-one">
+      <p>
+        Articles &amp; Guides published under
+        the topic {{ page.title }}.
+      </p>
+    </div>
+  </div>
+</header>
+
+<section class="wrapper">
+  <div class="container">
+    {% include articles_listing_by_topic.liquid topic=page %}
+  </div>
+</section>
