@@ -1,0 +1,39 @@
+---
+
+layout: base
+permalink: /topics/
+
+title: Topics
+
+---
+
+
+<header class="page-header">
+  <div class="container">
+    <h2 class="size-xxlarge title-one">
+      {{ page.title }}
+    </h2>
+    
+    <ul class="bullet-list">
+      {% assign nav_items = site.topics %}
+      {% for item in nav_items %}
+        <li>
+          <a href="#{{ item.title | slugify }}">
+            {{ item.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</header>
+
+{% for topic in site.topics %}
+  <section id="{{ topic.title | slugify }}" class="wrapper">
+    <div class="container">
+      <h3 class="size-xlarge title-four">
+        {{ topic.title }}
+      </h3>
+      {% include articles_listing_by_topic.liquid topic=topic %}
+    </div>
+  </section>
+{% endfor %}

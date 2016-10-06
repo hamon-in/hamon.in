@@ -1,0 +1,7 @@
+{% assign articles = '' | split: '' %}
+{% for article in site.articles %}
+  {% if article.topics contains include.topic.id %}
+    {% assign articles = articles | push: article %}
+  {% endif %}
+{% endfor %}
+{% include articles_listing.liquid articles=articles %}
