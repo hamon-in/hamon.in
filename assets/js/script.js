@@ -18,6 +18,10 @@
                 { 'weight': 400, 'style': 'italic' },
                 { 'weight': 700 },
                 { 'weight': 700, 'style': 'italic' },
+            ],
+            'gt-sectra': [
+                { 'weight': 400 },
+                { 'weight': 400, 'style': 'italic' },
             ]
         },
         activeClass = 'wf-active',

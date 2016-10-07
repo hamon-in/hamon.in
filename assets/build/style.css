@@ -565,12 +565,12 @@ hr {
 /* ============== */
 /*  Families  */
 body {
-  font-family: GT Pressura Mono, serif;
+  font-family: GT Sectra, serif;
   line-height: 1.5;
   font-weight: normal;
 }
 .wf-active body {
-  font-family: gt-pressura-mono, GT Pressura Mono, serif;
+  font-family: gt-sectra, GT Sectra, serif;
 }
 h1,
 h2,
@@ -613,10 +613,10 @@ th {
 }
 /* Declaring it separately to allow it to override the defaults declared just above */
 .prose-type {
-  font-family: GT Pressura Mono, serif;
+  font-family: GT Sectra, serif;
 }
 .wf-active .prose-type {
-  font-family: gt-pressura-mono, GT Pressura Mono, serif;
+  font-family: gt-sectra, GT Sectra, serif;
 }
 .title-type {
   font-family: GT Pressura Mono, sans-serif;
@@ -928,6 +928,7 @@ a.silent {
 }
 .testimonial:before {
   content: "“";
+  font-family: GT Pressura Mono, sans-serif;
   position: absolute;
   font-size: 225px;
   font-size: 15rem;
@@ -937,6 +938,9 @@ a.silent {
   margin-left: -0.2em;
   margin-top: 0.2em;
   z-index: 0;
+}
+.wf-active .testimonial:before {
+  font-family: gt-pressura-mono, GT Pressura Mono, sans-serif;
 }
 .testimonial-attribution {
   margin-left: auto;

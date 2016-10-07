@@ -56,7 +56,7 @@ clients:
       {{ page.title }}
     </h2>
     
-    <div class="indent-one">
+    <div class="indent-one title-type">
       {{ page.brief | markdownify }}
     </div>
   </div>
@@ -87,7 +87,7 @@ clients:
                 <li>
                   {{ project.title }}
                   {% if project.tech %}
-                    <b class="title-label">
+                    <b class="title-label title-type">
                       {{ project.tech | join: ', ' }}
                     </b>
                   {% endif %}
@@ -112,7 +112,7 @@ clients:
               <h4>
                 {{ client.testimonial.name }}
               </h4>
-              <i>
+              <i class="title-type">
                 {{ client.testimonial.designation }},
                 {{ client.testimonial.org }}
               </i>
