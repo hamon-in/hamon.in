@@ -2,18 +2,22 @@
 
 
 
-.page-header {
-    &:extend(.fill-brand-three);
-    a:extend(.fill-brand-three a) {}
-    padding-top: 25vh;
+.bleed,
+.wrapper {
+    &:extend(.fill-brand-one);
+    a:extend(.fill-brand-one a) {}
+    padding:1.5rem 0.5rem;
 }
 .wrapper {
-    border: 0.5rem solid @brand-three;
-    // margin: 0.35rem;
-    padding:1.00rem 0;
-    // > .container {
-    //     // margin: -1.5rem;
-    // }
+    margin: 0.5rem;
+    padding:1rem 0;
+}
+.padded {
+    padding: 0 0.45rem;
+}
+.page-header {
+    &:extend(.padded);
+    padding-top: 25vh;
 }
 
 

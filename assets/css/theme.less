@@ -7,16 +7,16 @@
 /* Base Styles */
 
 html, body {
-    background: @brand-one;
-    color: @brand-two;
+    background: @brand-three;
+    color: @brand-one;
 }
 a,
 a:visited {
-    color: @brand-three;
+    color: inherit;
     text-decoration: underline;
 }
 a.silent {
-    color: inherit;
+    color: inherit !important;
     text-decoration: none;
 }
 
@@ -33,6 +33,7 @@ a.silent {
 .fill-brand-one {
     color: @brand-two;
     background: @brand-one;
+    a { color: @brand-three; }
 }
 .fill-brand-two {
     color: @brand-one;
@@ -41,7 +42,6 @@ a.silent {
 .fill-brand-three {
     color: @brand-one;
     background-color: @brand-three;
-    a { color: inherit; }
 }
 .fill-brand-four {
     color: @brand-one;

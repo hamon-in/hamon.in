@@ -652,6 +652,9 @@ code {
   text-decoration: none !important;
   display: inline-block;
 }
+.centered {
+  text-align: center;
+}
 /*  Scale  */
 /* 1.333 */
 .size-huge {
@@ -845,16 +848,16 @@ p + .collapse {
 /* Base Styles */
 html,
 body {
-  background: white;
-  color: #121212;
+  background: #825C4E;
+  color: white;
 }
 a,
 a:visited {
-  color: #825C4E;
+  color: inherit;
   text-decoration: underline;
 }
 a.silent {
-  color: inherit;
+  color: inherit !important;
   text-decoration: none;
 }
 /* Brand Styles */
@@ -873,22 +876,24 @@ a.silent {
 .brand-five {
   color: #D7D7D7;
 }
-.fill-brand-one {
+.fill-brand-one,
+.bleed,
+.wrapper {
   color: #121212;
   background: white;
+}
+.fill-brand-one a,
+.bleed a,
+.wrapper a {
+  color: #825C4E;
 }
 .fill-brand-two {
   color: white;
   background: #121212;
 }
-.fill-brand-three,
-.page-header {
+.fill-brand-three {
   color: white;
   background-color: #825C4E;
-}
-.fill-brand-three a,
-.page-header a {
-  color: inherit;
 }
 .fill-brand-four {
   color: white;
@@ -900,14 +905,24 @@ a.silent {
 }
 /* Animations */
 /* Objects */
-.page-header {
-  padding-top: 25vh;
+.bleed,
+.wrapper {
+  padding: 22.5px 7.5px;
+  padding: 1.5rem 0.5rem;
 }
 .wrapper {
-  border: 7.5px solid #825C4E;
-  border: 0.5rem solid #825C4E;
+  margin: 7.5px;
+  margin: 0.5rem;
   padding: 15px 0;
-  padding: 1.00rem 0;
+  padding: 1rem 0;
+}
+.padded,
+.page-header {
+  padding: 0 6.75px;
+  padding: 0 0.45rem;
+}
+.page-header {
+  padding-top: 25vh;
 }
 .bullet-list a {
   display: block;
