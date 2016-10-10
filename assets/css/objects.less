@@ -17,7 +17,7 @@
 }
 .page-header {
     &:extend(.padded);
-    padding-top: 25vh;
+    padding-top: 10vh;
 }
 
 
@@ -70,4 +70,33 @@
     
     > h4 { margin-bottom: 0; }
     > i { font-style: normal; }
+}
+
+
+
+// header
+.header-logo {
+    float: left;
+    width: 12rem;
+    margin: 0 0 0 -0.5rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    .ir {
+        display: block;
+        margin: 0;
+        height: 7rem;
+        width: 100%;
+        background: url(../img/hamon-circle.svg) no-repeat scroll left top;
+        background-size: contain;
+    }
+}
+.header-nav {
+    text-align: right;
+    text-transform: uppercase;
+    a:after { display: none; }
+    a:hover { text-decoration: underline; }
+    ul {
+        padding-left: 0;
+        max-width: 50%;
+        margin: 0 0 0 auto;
+    }
 }

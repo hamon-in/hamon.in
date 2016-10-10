@@ -1,7 +1,32 @@
 ---
 layout: html
+
+nav:
+  Work: /work/
+  About: /about/
+  Lycӕum: /lycaeum/
+  Articles: /articles/
 ---
 
+<header class="container">
+  <a class="header-logo" href="{{ site.baseurl | append: '/' }}">
+    <h1 class="ir">
+      Hamon
+    </h1>
+  </a>
+  
+  <nav class="header-nav">
+    <ul class="bullet-list title-type size-regular">
+      {% for item in layout.nav %}
+        <li>
+          <a href="{{ site.baseurl | append: item[1] }}">
+            {{ item[0] | smartify }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
 
 
 {{ content }}

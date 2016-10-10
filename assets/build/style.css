@@ -782,7 +782,7 @@ p + .collapse {
   text-transform: uppercase;
 }
 .title-label {
-  color: #825C4E;
+  color: #825D4E;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -848,7 +848,7 @@ p + .collapse {
 /* Base Styles */
 html,
 body {
-  background: #825C4E;
+  background: #825D4E;
   color: white;
 }
 a,
@@ -868,7 +868,7 @@ a.silent {
   color: #121212;
 }
 .brand-three {
-  color: #825C4E;
+  color: #825D4E;
 }
 .brand-four {
   color: red;
@@ -885,7 +885,7 @@ a.silent {
 .fill-brand-one a,
 .bleed a,
 .wrapper a {
-  color: #825C4E;
+  color: #825D4E;
 }
 .fill-brand-two {
   color: white;
@@ -893,7 +893,7 @@ a.silent {
 }
 .fill-brand-three {
   color: white;
-  background-color: #825C4E;
+  background-color: #825D4E;
 }
 .fill-brand-four {
   color: white;
@@ -922,7 +922,7 @@ a.silent {
   padding: 0 0.45rem;
 }
 .page-header {
-  padding-top: 25vh;
+  padding-top: 10vh;
 }
 .bullet-list a {
   display: block;
@@ -949,7 +949,7 @@ a.silent {
   font-size: 15rem;
   line-height: 0;
   opacity: 0.2;
-  color: #825C4E;
+  color: #825D4E;
   margin-left: -0.2em;
   margin-top: 0.2em;
   z-index: 0;
@@ -977,6 +977,39 @@ a.silent {
 }
 .testimonial-attribution > i {
   font-style: normal;
+}
+.header-logo {
+  float: left;
+  width: 180px;
+  width: 12rem;
+  margin: 0 0 0 -7.5px;
+  margin: 0 0 0 -0.5rem;
+  padding: 7.5px 0 7.5px 7.5px;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+}
+.header-logo .ir {
+  display: block;
+  margin: 0;
+  height: 105px;
+  height: 7rem;
+  width: 100%;
+  background: url(../img/hamon-circle.svg) no-repeat scroll left top;
+  background-size: contain;
+}
+.header-nav {
+  text-align: right;
+  text-transform: uppercase;
+}
+.header-nav a:after {
+  display: none;
+}
+.header-nav a:hover {
+  text-decoration: underline;
+}
+.header-nav ul {
+  padding-left: 0;
+  max-width: 50%;
+  margin: 0 0 0 auto;
 }
 /* ==|== print styles =======================================================
    Print styles.
