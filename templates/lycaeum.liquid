@@ -1,0 +1,59 @@
+---
+layout: base
+permalink: /lycaeum/
+
+title: The Lycӕum
+
+brief: |
+  An experimental educational endeavour based in Kerala
+  and focusing on IT education.
+
+body: |
+  The Lycaeum is a long term mentoring and training program run by
+  Hamon technologies. Several tech. community building activities as
+  well as long term trainings and public workshops are held by The
+  Lycaeum on a regular basis. 
+  
+  If you're a college student or a fresher and interested in working
+  at Hamon, please enroll for the [mentoring course](link) conducted
+  regulary at The Lycaeum.
+  
+  For more information about The Lycaeum please visit
+  [thelycaeum.in](http://thelycaeum.in).
+
+topic: /topics/technology
+
+---
+
+<header class="page-header">
+  <div class="container">
+    <h2 class="size-xxlarge title-one">
+      {{ page.title }}
+    </h2>
+    
+    <div class="indent-one title-type">
+      {{ page.brief | markdownify }}
+    </div>
+  </div>
+</header>
+
+<article class="wrapper">
+  <div class="container prose">
+    {{ page.body | markdownify }}
+  </div>
+</article>
+
+{% if page.topic %}
+{% assign topic = site.topics | where: 'id', page.topic | first %}
+{% if topic %}
+<section class="wrapper">
+  <div class="container">
+    <h3 class="size-xlarge title-four">
+      {{ topic.title }}
+      Guides
+    </h3>
+    {% include articles_listing_by_topic.liquid topic=topic %}
+  </div>
+</section>
+{% endif %}
+{% endif %}
