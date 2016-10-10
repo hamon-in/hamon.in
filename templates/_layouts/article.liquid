@@ -33,3 +33,13 @@ layout: base
     </div>
   </section>
 </article>
+
+
+{% for topic_id in page.topics %}
+  {%
+    include articles_listing_by_topic.liquid
+    topic_id=topic_id
+    exclude_id=page.id
+    title_prepend='More in '
+  %}
+{% endfor %}
