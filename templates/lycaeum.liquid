@@ -4,6 +4,11 @@ permalink: /lycaeum/
 
 title: The Lycӕum
 
+logo:
+  alt: The Lycaeum logo
+  link: http://thelycaeum.in
+  src: /img/lycaeum-logo.png
+
 brief: |
   An experimental educational endeavour based in Kerala
   and focusing on IT education.
@@ -39,6 +44,14 @@ topic: /topics/technology
 
 <article class="wrapper">
   <div class="container prose">
+    {% if page.logo %}
+      <figure class="contain-width centered">
+        <a href="{{ page.logo.link }}">
+          <img alt="{{ page.logo.alt }}" src="{{ site.baseurl | append: page.logo.src }}">
+        </a>
+      </figure>
+    {% endif %}
+    
     {{ page.body | markdownify }}
   </div>
 </article>
