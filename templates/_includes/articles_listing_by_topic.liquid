@@ -1,7 +1,28 @@
-{% assign articles = '' | split: '' %}
-{% for article in site.articles %}
-  {% if article.topics contains include.topic.id %}
-    {% assign articles = articles | push: article %}
-  {% endif %}
-{% endfor %}
-{% include articles_listing.liquid articles=articles %}
+{% if include.topic %}
+  {% assign topic = include.topic %}
+{% else %}
+  {% assign topic = site.topics | where: 'id', include.topic_id | first %}
+{% endif %}
+
+{% if topic %}
+  {% assign articles = '' | split: '' %}
+  {% for article in site.articles %}
+    {% if article.topics contains topic.id and article.id != include.exclude_id %}
+      {% assign articles = articles | push: article %}
+    {% endif %}
+  {% endfor %}
+  {% assign length = articles | size %}
+  
+{% if length > 0 %}
+  <section id="{{ topic.title | slugify }}" class="wrapper">
+    <div class="container">
+      {% unless include.title == false %}
+        <h3 class="size-xlarge title-four">
+          {{ topic.title | append: include.title_append | prepend: include.title_prepend }}
+        </h3>
+      {% endunless %}
+      {% include articles_listing.liquid articles=articles exclude_id=include.exclude_id %}
+    </div>
+  </section>
+{% endif %}
+{% endif %}

@@ -28,12 +28,8 @@ title: Topics
 </header>
 
 {% for topic in site.topics %}
-  <section id="{{ topic.title | slugify }}" class="wrapper">
-    <div class="container">
-      <h3 class="size-xlarge title-four">
-        {{ topic.title }}
-      </h3>
-      {% include articles_listing_by_topic.liquid topic=topic %}
-    </div>
-  </section>
+  {%
+    include articles_listing_by_topic.liquid
+    topic=topic
+  %}
 {% endfor %}

@@ -20,8 +20,8 @@ layout: base
   </div>
 </header>
 
-<section class="wrapper">
-  <div class="container">
-    {% include articles_listing_by_topic.liquid topic=page %}
-  </div>
-</section>
+{%
+  include articles_listing_by_topic.liquid
+  title=false
+  topic=page
+%}
