@@ -11,14 +11,14 @@
         {{ article.brief | markdownify }}
         <p class="collapse">
           {% if article.author %}
-            <span class="size-small">
+            <i class="size-small">
               by
               {{ article.author.name }}
-            </span>
+            </i>
             <br>
           {% endif %}
           <a class="silent" href="{{ link }}">
-            <time class="title-fineprint size-xsmall">
+            <time class="title-fineprint title-type size-xsmall">
               {{ article.date | date: '%b %-d, %Y' }}
             </time>
           </a>
