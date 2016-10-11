@@ -932,6 +932,22 @@ a.silent {
 .bullet-list a:after {
   content: "→";
 }
+.prose .links-list,
+.links-list {
+  padding-left: 0;
+  margin-top: -37.5px;
+  margin-top: -2.5rem;
+}
+.prose .links-list li,
+.links-list li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 0.5em;
+}
+.prose .links-list li:before,
+.links-list li:before {
+  display: none;
+}
 .testimonial blockquote,
 .testimonial blockquote > p:last-child {
   margin-bottom: 0;

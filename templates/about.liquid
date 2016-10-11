@@ -135,12 +135,10 @@ team:
             {{ person.bio | markdownify }}
             
             {% if person.links %}
-              <ul class="collapse">
+              <ul class="links-list title-type title-label">
                 {% for link in person.links %}
                   <li>
-                    <a href="{{ link[1] }}">
-                      {{ link[0] }}
-                    </a>
+                    <a href="{{ link[1] }}">{{ link[0] }}</a>
                   </li>
                 {% endfor %}
               </ul>
