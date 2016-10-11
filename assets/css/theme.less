@@ -14,9 +14,17 @@ a,
 a:visited {
     color: inherit;
     text-decoration: underline;
+    outline: 0.15rem solid transparent;
 }
 a.silent {
     color: inherit !important;
+    text-decoration: none;
+}
+a:not(.silent-hover):hover {
+    transition: all 0.2s;
+    background-color: @brand-three;
+    outline: 0.15rem solid @brand-three;
+    color: @brand-one !important;
     text-decoration: none;
 }
 

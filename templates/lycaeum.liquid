@@ -46,7 +46,7 @@ topic: /topics/technology
   <div class="container prose">
     {% if page.logo %}
       <figure class="contain-width centered">
-        <a href="{{ page.logo.link }}">
+        <a class="silent-hover" href="{{ page.logo.link }}">
           <img alt="{{ page.logo.alt }}" src="{{ site.baseurl | append: page.logo.src }}">
         </a>
       </figure>

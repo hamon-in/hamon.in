@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
+  <title>{% if page.title %}{{ page.title | smartify }} - {% endif %}{{ site.name }}</title>
   
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {% if jekyll.environment == "production" %}

@@ -855,9 +855,20 @@ a,
 a:visited {
   color: inherit;
   text-decoration: underline;
+  outline: 2.25px solid transparent;
+  outline: 0.15rem solid transparent;
 }
 a.silent {
   color: inherit !important;
+  text-decoration: none;
+}
+a:not(.silent-hover):hover {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  background-color: #825D4E;
+  outline: 2.25px solid #825D4E;
+  outline: 0.15rem solid #825D4E;
+  color: white !important;
   text-decoration: none;
 }
 /* Brand Styles */
@@ -947,6 +958,13 @@ a.silent {
 .prose .links-list li:before,
 .links-list li:before {
   display: none;
+}
+.prose .links-list a,
+.links-list a {
+  padding: 2.25px  4.5px;
+  padding: 0.15rem  0.3rem;
+  margin: -2.25px -4.5px;
+  margin: -0.15rem -0.3rem;
 }
 .testimonial blockquote,
 .testimonial blockquote > p:last-child {
