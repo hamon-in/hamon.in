@@ -930,6 +930,7 @@ a:not(.silent-hover):hover {
   margin: 0.5rem;
   padding: 15px 0;
   padding: 1rem 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px -15px;
 }
 .padded,
 .page-header {
