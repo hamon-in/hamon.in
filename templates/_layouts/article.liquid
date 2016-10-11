@@ -23,6 +23,24 @@ layout: base
         <time class="size-small">
           {{ page.date | date: '%b %-d, %Y' }}
         </time>
+        {% if page.topics %}
+          <span class="size-small">in</span>
+          {% for topic_id in page.topics %}
+            {% assign topic = site.topics | where: 'id', topic_id | first %}
+            {% if topic %}
+              <a class="title-type title-label" href="{{ site.baseurl | append: topic.url }}">
+                {{ topic.title
+              }}</a>{%
+                unless forloop.last
+              %}<span class="size-small">{%
+                if forloop.rindex0 == 1
+              %} &amp;
+              {% else %}, {% endif %}
+              </span>
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
       </p>
     </div>
   </header>
