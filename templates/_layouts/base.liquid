@@ -2,14 +2,25 @@
 layout: html
 
 nav:
-  Work: /work/
-  About: /about/
-  Lycӕum: /lycaeum/
-  Articles: /articles/
+  Work:       /work/
+  About:      /about/
+  Lycӕum:     /lycaeum/
+  Articles:   /articles/
+
+footer_nav:
+  Home:       /
+  Work:       /work/
+  About:      /about/
+  Lycӕum:     /lycaeum/
+  Articles:   /articles/
+  Contact:    /contact/
+  GitHub:     https://github.com/hamon-in
+  Twitter:    https://twitter.com/hamon_in
+
 ---
 
 <header class="container">
-  <a class="header-logo" href="{{ site.baseurl | append: '/' }}">
+  <a title="Hamon - Home" class="header-logo" href="{{ site.baseurl | append: '/' }}">
     <h1 class="ir">
       Hamon
     </h1>
@@ -32,4 +43,37 @@ nav:
 {{ content }}
 
 
-
+<footer class="container">
+  <a class="footer-logo" href="{{ site.baseurl | append: '/' }}">
+    <h1 class="ir">
+      Hamon
+    </h1>
+  </a>
+  
+  <nav class="footer-nav">
+    <ul class="links-list title-type size-small title-three clearfix">
+      {% for item in layout.footer_nav %}
+        <li>
+          {% if item[1] contains '://' %}
+            {% assign url = item[1] %}
+          {% else %}
+            {% assign url = site.baseurl | append:item[1] %}
+          {% endif %}
+          <a href="{{ url }}">{{
+            item[0] | smartify
+          }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  
+  <p class="title-type size-small">
+    From the coasts of Kerala, India.
+    <br>
+    <span>
+      &copy;
+      {{ site.time | date: "%Y" }}
+      Hamon Technologies LLP
+    </span>
+  </p>
+</footer>
