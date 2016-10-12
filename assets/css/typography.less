@@ -87,7 +87,7 @@ code {
     html    { font-size: 18px;     line-height: @prose-leading; }
 }
 @media (min-width: @sm-min) {
-    html    { font-size: 16px;     line-height: @prose-leading; }
+    html    { font-size: 15px;     line-height: @prose-leading; }
 }
 @media (min-width: @md-min) {
     html    { font-size: 18px;     line-height: @prose-leading; }
@@ -218,6 +218,12 @@ p {
         border-width: 0 1rem;
         padding: 1.5rem 1rem;
         margin: -1rem -2rem 2rem;
+        .sm-plus({
+            margin-left: -(2.5rem + 0.5rem);
+            margin-right:-(2.5rem + 0.5rem);
+            padding-left: (2.5rem - 0.5rem);
+            padding-right:(2.5rem - 0.5rem);
+        });
         overflow-x: scroll;
         -webkit-overflow-scrolling: touch;
         code {

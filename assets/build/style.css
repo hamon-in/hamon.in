@@ -518,14 +518,14 @@ hr {
 }
 @media (min-width: 47em) {
   .container {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 @media (min-width: 70em) {
   .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 .container {
@@ -552,12 +552,12 @@ hr {
 }
 @media (min-width: 47em) {
   .container {
-    max-width: 52rem;
+    max-width: 70em;
   }
 }
 @media (min-width: 70em) {
   .container {
-    max-width: 60rem;
+    max-width: 100em;
   }
 }
 /* ============== */
@@ -702,7 +702,7 @@ html {
 }
 @media (min-width: 47em) {
   html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
   }
 }
@@ -831,6 +831,14 @@ p + .collapse {
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
 }
+@media (min-width: 47em) {
+  .prose pre {
+    margin-left: -3rem;
+    margin-right: -3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
 .prose pre code {
   background: none;
   padding: 0;
@@ -925,12 +933,24 @@ a:not(.silent-hover):hover {
   padding: 22.5px 7.5px;
   padding: 1.5rem 0.5rem;
 }
+@media (min-width: 47em) {
+  .bleed {
+    margin: 0 0 0 40%;
+    padding: 1.5rem 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px -15px;
+  }
+}
 .wrapper {
   margin: 7.5px;
   margin: 0.5rem;
   padding: 15px 0;
   padding: 1rem 0;
   box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px -15px;
+}
+@media (min-width: 47em) {
+  .wrapper {
+    margin: 1.5rem 1.5rem 1.5rem 40%;
+  }
 }
 .padded,
 .page-header {
@@ -939,6 +959,13 @@ a:not(.silent-hover):hover {
 }
 .page-header {
   padding-top: 10vh;
+}
+@media (min-width: 47em) {
+  .page-header {
+    float: left;
+    padding-top: 20vh;
+    width: 40%;
+  }
 }
 .bullet-list a {
   display: block;
@@ -1037,6 +1064,15 @@ a:not(.silent-hover):hover {
   background: url(../img/hamon-circle.svg) no-repeat scroll left top;
   background-size: contain;
 }
+@media (min-width: 47em) {
+  .header-logo {
+    width: 15rem;
+  }
+  .header-logo .ir {
+    height: 10rem;
+    background-image: url(../img/hamon-logo.svg);
+  }
+}
 .header-nav {
   text-align: right;
   text-transform: uppercase;
@@ -1081,6 +1117,18 @@ a:not(.silent-hover):hover {
       -ms-transform: translateX(-5%);
           transform: translateX(-5%);
 }
+@media (min-width: 47em) {
+  .footer-logo {
+    float: left;
+    width: 40%;
+  }
+  .footer-logo .ir {
+    background-position: left center;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+}
 .footer-nav {
   width: 70%;
   margin: 45px auto;
@@ -1102,6 +1150,19 @@ a:not(.silent-hover):hover {
   padding: 0.5rem 0;
   margin: -7.5px 0;
   margin: -0.5rem 0;
+}
+@media (min-width: 47em) {
+  .footer-nav {
+    width: auto;
+    margin: 1rem 0 2rem 40%;
+    padding-left: 2.5rem;
+  }
+}
+@media (min-width: 47em) {
+  .footer-fineprint {
+    margin-left: 40%;
+    padding-left: 2.5rem;
+  }
 }
 /* ==|== print styles =======================================================
    Print styles.

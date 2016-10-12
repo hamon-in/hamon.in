@@ -1,6 +1,7 @@
 /* Objects */
 
 
+@sm-sidebar: 40%;
 
 .bleed,
 .wrapper {
@@ -8,10 +9,20 @@
     a:extend(.fill-brand-one a) {}
     padding:1.5rem 0.5rem;
 }
+.bleed {
+    .sm-plus({
+        margin: 0 0 0 @sm-sidebar;
+        padding: 1.5rem 0;
+        box-shadow: rgba(0,0,0,0.2) 0 20px 30px -15px;
+    });
+}
 .wrapper {
     margin: 0.5rem;
     padding:1rem 0;
     box-shadow: rgba(0,0,0,0.2) 0 20px 30px -15px;
+    .sm-plus({
+        margin: 1.5rem 1.5rem 1.5rem @sm-sidebar;
+    });
 }
 .padded {
     padding: 0 0.45rem;
@@ -19,6 +30,11 @@
 .page-header {
     &:extend(.padded);
     padding-top: 10vh;
+    .sm-plus({
+        float: left;
+        padding-top: 20vh;
+        width: @sm-sidebar;
+    })
 }
 
 
@@ -104,6 +120,13 @@
         background: url(../img/hamon-circle.svg) no-repeat scroll left top;
         background-size: contain;
     }
+    .sm-plus({
+        width: 15rem;
+        .ir {
+            height: 10rem;
+            background-image: url(../img/hamon-logo.svg);
+        }
+    });
 }
 .header-nav {
     text-align: right;
@@ -139,6 +162,14 @@
         background-size: 80% auto;
         transform: translateX(-5%);
     }
+    .sm-plus({
+        float: left;
+        width: @sm-sidebar;
+        .ir {
+            background-position: left center;
+            transform: none;
+        }
+    });
 }
 .footer-nav {
     width: 70%;
@@ -151,4 +182,15 @@
         &:nth-child(even) { padding-left: 1.5rem; }
     }
     a { padding: 0.5rem 0; margin: -0.5rem 0; }
+    .sm-plus({
+        width: auto;
+        margin: 1rem 0 2rem @sm-sidebar;
+        padding-left: 2.5rem;
+    });
+}
+.footer-fineprint {
+    .sm-plus({
+        margin-left: @sm-sidebar;
+        padding-left: 2.5rem;
+    });
 }
