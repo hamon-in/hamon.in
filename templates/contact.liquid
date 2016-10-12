@@ -1,0 +1,67 @@
+---
+layout: base
+permalink: /contact/
+
+title: Hire Us
+
+brief: |
+  Hire us,  
+  apply to work,  
+  or just say hello.
+
+body: |
+  We work with clients from a wide variety of domains from all over
+  the world. If you'd like to hire us to help you with your product,
+  give us a shout.
+
+contact:
+  Email: |
+    <hello@hamon.in>
+  
+  Twitter: |
+    [@hamon_in](https://twitter.com/hamon_in)
+  
+  Phone: |
+    [+91 956-709-1835](tel:+919567091835)
+  
+  Address: |
+    #29 Al-Riyaz  
+    Pipeline road  
+    Patteri, Kozhikode  
+    Kerala - 673016  
+    India
+
+---
+
+<header class="page-header">
+  <div class="container">
+    <h2 class="size-xxlarge title-one">
+      Contact
+    </h2>
+    
+    <div class="indent-one title-type">
+      {{ page.brief | markdownify }}
+    </div>
+  </div>
+</header>
+
+<article class="wrapper">
+  <div class="container prose">
+    {% if page.body %}
+      <div class="prose">
+        {{ page.body | markdownify }}
+      </div>
+    {% endif %}
+    
+    <dl>
+      {% for option in page.contact %}
+        <dt class="title-three">
+          {{ option[0] | smartify }}
+        </dt>
+        <dd class="indent-one prose title-type">
+          {{ option[1] | markdownify }}
+        </dd>
+      {% endfor %}
+    </dl>
+  </div>
+</article>
