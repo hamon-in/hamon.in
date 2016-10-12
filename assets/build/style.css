@@ -1052,6 +1052,18 @@ a:not(.silent-hover):hover {
   max-width: 50%;
   margin: 0 0 0 auto;
 }
+.header-nav li:last-child a {
+  display: inline-block;
+  margin-top: 3.75px;
+  margin-top: 0.25rem;
+  padding: 3.75px 11.25px;
+  padding: 0.25rem 0.75rem;
+  background: white;
+  color: #825D4E;
+}
+.header-nav li:last-child a:hover {
+  color: #825D4E !important;
+}
 .footer-logo {
   display: block;
   margin: 15px 0 0;
