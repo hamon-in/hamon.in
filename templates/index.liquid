@@ -1,45 +1,155 @@
 ---
 layout: base
+
+body: |
+  HAMON develops cutting edge software built on solid foundations. We deliver reliable solutions with predictable schedules. Our team has over a decade of experience in the industry.
+  
+  We work in the infrastructure, automation and web domains and specialise in the Python stack.
+
+logo:
+  alt: Hamon logo
+  link: http://hamon.in
+  src: /img/hamon-wordmark.svg
+
+
 ---
 
-<div class="wrapper">
-  <div class="container">
-    <h1>Hamon</h1>
-    
-    
-    
-    <dl>
-      <dt><a href="{{ site.baseurl | append: '/about/' }}">About</a></dt>
-      <dt><a href="{{ site.baseurl | append: '/work/' }}">Work</a></dt>
-      <dt><a href="{{ site.baseurl | append: '/lycaeum/' }}">The Lycӕum</a></dt>
-      {% for collection in site.collections %}
-        <dt>
-          {% assign slug = collection.title | slugify %}
-          <a href="{{ site.baseurl | append: '/' | append: slug }}">
-            {{ collection.title }}
+{% assign work_page = site.pages | where: 'name', 'work.liquid' | first %}
+{% assign about_page = site.pages | where: 'name', 'about.liquid' | first %}
+{% assign contact_page = site.pages | where: 'name', 'contact.liquid' | first %}
+{% assign client_testimonial = false %}
+
+<div>
+  <section class="wrapper wrapper-zigzag">
+    <div class="container prose">
+      {% if page.logo %}
+        <figure class="contain-width centered">
+          <a class="silent-hover" href="{{ page.logo.link }}">
+            <img alt="{{ page.logo.alt }}" src="{{ site.baseurl | append: page.logo.src }}">
           </a>
-        </dt>
-        <dd class="prose">
-          {% if collection.output %}
-            <ul>
-              {% for doc in collection.docs %}
-                <li>
-                  <a href="{{ site.baseurl | append: doc.url }}">
-                    {{ doc.title }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            <dl>
-              {% for doc in collection.docs %}
-                <dt>{{ doc.title }}</dt>
-                <dd>{{ doc.content }}</dd>
-              {% endfor %}
-            </dl>
+        </figure>
+      {% endif %}
+      
+      {{ page.body | markdownify }}
+    </div>
+  </section>
+  
+  <section class="wrapper wrapper-zigzag">
+    <div class="container">
+      <h3 class="size-xlarge title-four">
+        Clients &amp; Projects
+      </h3>
+      
+      <ul>
+        {% for client in work_page.clients %}
+          <li>
+            <h4 class="title-three">
+              {{ client.title }}
+            </h4>
+            {% if client.link %}
+              <a href="{{ client.link }}">
+                {% include prettyurl.liquid url=client.link %}
+              </a>
+            {% endif %}
+            <div class="prose">
+              <ul>
+                {% for project in client.projects %}
+                  <li>
+                    {{ project.title }}
+                    {% if project.tech %}
+                      <b class="title-label title-type">
+                        {{ project.tech | join: ', ' }}
+                      </b>
+                    {% endif %}
+                    {% if project.link %}
+                      <a class="truncate" href="{{ project.link }}">
+                        {% include prettyurl.liquid url=project.link %}
+                      </a>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+          {% if client_testimonial == false and client.testimonial %}
+            {% assign client_testimonial = client.testimonial %}
           {% endif %}
-        </dd>
-      {% endfor %}
-    </dl>
-  </div>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  
+  <section class="wrapper wrapper-zigzag">
+    <div class="container">
+      <div class="testimonial size-large">
+        <blockquote>
+          {{ client_testimonial.body | markdownify }}
+        </blockquote>
+        
+        <div class="testimonial-attribution">
+          <h4>
+            {{ client_testimonial.name }}
+          </h4>
+          <i class="title-type">
+            {{ client_testimonial.designation }},
+            {{ client_testimonial.org }}
+          </i>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="wrapper wrapper-zigzag">
+    <div class="container">
+      <h3 class="size-xlarge title-four">
+        Articles &amp; Guides
+      </h3>
+      {% include articles_listing.liquid articles=site.articles %}
+    </div>
+  </section>
+  
+  <section class="wrapper wrapper-zigzag">
+    <div class="container">
+      <h3 class="size-xlarge title-four">
+        Team
+      </h3>
+      <ul>
+        {% for person in about_page.team.members %}
+          <li>
+            <h4 class="title-three">
+              {{ person.name }}
+            </h4>
+            <div class="indent-one prose">
+              {{ person.bio | markdownify }}
+              
+              {% if person.links %}
+                <ul class="links-list title-type title-label">
+                  {% for link in person.links %}
+                    <li>
+                      <a href="{{ link[1] }}">{{ link[0] }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  
+  <section class="wrapper wrapper-zigzag">
+    <div class="container">
+      {% if contact_page.body %}
+        <div class="prose">
+          {{ contact_page.body | markdownify }}
+        </div>
+      {% endif %}
+      <h3 class="title-three size-xlarge">
+        <a class="" href="{{ site.baseurl | append: contact_page.url }}">
+          Contact Us &rarr;
+        </a>
+      </h3>
+    </div>
+  </section>
 </div>

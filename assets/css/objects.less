@@ -26,12 +26,19 @@
     box-shadow: rgba(0,0,0,0.2) 0 20px 30px -15px;
     .sm-plus({
         margin: 1.5rem 1.5rem 1.5rem @sm-sidebar;
+        &.wrapper-zigzag:nth-child(even) {
+            margin: 1.5rem @sm-sidebar 1.5rem 1.5rem;
+        }
     });
     .md-plus({
         margin: 2rem 5rem 2rem @md-sidebar;
         padding: 2rem 0;
+        &.wrapper-zigzag:nth-child(even) {
+            margin: 2rem @md-sidebar 2rem 5rem;
+        }
     });
 }
+
 .padded {
     padding: 0 0.45rem;
 }
@@ -78,6 +85,7 @@
 .prose .links-list { margin-top: -2.5rem; }
 
 .testimonial {
+    margin-top: 3rem;
     blockquote,
     blockquote > p:last-child {
         margin-bottom: 0;

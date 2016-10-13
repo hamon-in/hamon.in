@@ -964,11 +964,17 @@ a:not(.silent-hover):hover {
   .wrapper {
     margin: 1.5rem 1.5rem 1.5rem 40%;
   }
+  .wrapper.wrapper-zigzag:nth-child(even) {
+    margin: 1.5rem 40% 1.5rem 1.5rem;
+  }
 }
 @media (min-width: 70em) {
   .wrapper {
     margin: 2rem 5rem 2rem 35%;
     padding: 2rem 0;
+  }
+  .wrapper.wrapper-zigzag:nth-child(even) {
+    margin: 2rem 35% 2rem 5rem;
   }
 }
 .padded,
@@ -1024,6 +1030,10 @@ a:not(.silent-hover):hover {
 .prose .links-list {
   margin-top: -37.5px;
   margin-top: -2.5rem;
+}
+.testimonial {
+  margin-top: 45px;
+  margin-top: 3rem;
 }
 .testimonial blockquote,
 .testimonial blockquote > p:last-child {
