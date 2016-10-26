@@ -10,6 +10,7 @@ var CSS_TASK = 'css',
     CSS_FILES = [
         'css/libs/normalize.css',
         'css/libs/helpers.css',
+        'css/libs/syntax.css',
         'css/main.less',
         'css/libs/print.css'
     ],
