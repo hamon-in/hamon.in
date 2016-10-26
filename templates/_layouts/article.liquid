@@ -28,7 +28,7 @@ layout: base
           {% for topic_id in page.topics %}
             {% assign topic = site.topics | where: 'id', topic_id | first %}
             {% if topic %}
-              <a class="title-type title-label" href="{{ site.baseurl | append: topic.url }}">
+              <a class="title-type title-label brand-one" href="{{ site.baseurl | append: topic.url }}">
                 {{ topic.title
               }}</a>{%
                 unless forloop.last
