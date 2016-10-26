@@ -20,7 +20,9 @@ topics:
 ### Introduction
 Postgresql has support for [full text search](http://www.postgresql.org/docs/current/static/textsearch.html). The basic idea is to create a column of type `tsvector` and then you can run full text queries (represented as `tsquery` strings) using the `@@` operator. This is different from the `LIKE` queries using the `%string%` since this is language aware and can provide things like ranking etc. As an example,
 
-    SELECT 'I am satisfied with postgresql' LIKE '%satisfied%' as found;
+```sql
+SELECT 'I am satisfied with postgresql' LIKE '%satisfied%' as found;
+```
 
 will return
 
@@ -50,10 +52,12 @@ Feedback is welcome as are suggestions on how to get this fully feature complete
 
 First, I create a table like so
 
-    CREATE TABLE example (
-        name VARCHAR(10),
-        details TEXT
-    );
+```sql
+CREATE TABLE example (
+    name VARCHAR(10),
+    details TEXT
+);
+```
 
 And then, I insert [1000 rows](/stuff/items.csv) into this using
 
@@ -192,14 +196,15 @@ We'll get the `example` table. The schema is very plain now and doesn't have the
 
 For this, we'll need to derive from the `sqlalchemy.types.UserDefinedType`. This is mostly based on the [postgis example in the SQLAlchemy source tree](https://github.com/zzzeek/sqlalchemy/blob/master/examples/postgis/postgis.py). We simply create a new type derived from UserDefinedType and then give it a name. We have just one method inside it which is `get_col_spec`. 
 
-    class TsVector(UserDefinedType):
-        "Holds a TsVector column"
-    
-        name = "TSVECTOR"
-    
-        def get_col_spec(self):
-            return self.name
+```python
+class TsVector(UserDefinedType):
+    "Holds a TsVector column"
 
+    name = "TSVECTOR"
+
+    def get_col_spec(self):
+        return self.name
+```
 
 The `get_col_spec` function is used by the expression compiler to decide what the name of the type will be in the DDL. Since it's called `TSVECTOR`, that's what we should return here. The core types, as far as I know have their types coded directly into the compiler (e.g. For the SQLAlchemy provided `Boolean` type translates to the `BOOLEAN` type in the DDL). For Use defined types, the compiler will explicitly call the `get_col_spec` function to get the type name. This is the bare minimum to create the table.
 
@@ -207,72 +212,80 @@ The `get_col_spec` function is used by the expression compiler to decide what th
 
 First, we add the above snippet to our code and then we add a column of type `TsVector` to our `Example` class and run the script again. This time, we'll get the table with the `tsvector` column. Our code looks like this now.
 
-    import subprocess
-    
-    from sqlalchemy.ext.declarative import declarative_base
-    from sqlalchemy import Column, Integer, String, VARCHAR, create_engine, func, MetaData, Table, Index, event, DDL
-    from sqlalchemy.orm import sessionmaker
-    from sqlalchemy.types import UserDefinedType
-    
-    engine = create_engine('postgresql://noufal:abcdef@localhost/test', echo = True)
-    Base = declarative_base()
-    Session = sessionmaker(bind = engine)
-    session = Session()
-    
-    class TsVector(UserDefinedType):
-        "Holds a TsVector column"
-    
-        name = "TSVECTOR"
-    
-        def get_col_spec(self):
-            return self.name
-    
-    class Example(Base):
-        __tablename__ = 'example'
-    
-        name = Column(VARCHAR(10), primary_key = True)
-        details = Column(String)
-        details_tsvector = Column(TsVector)
-    
-    
-    def create_tables():
-        Base.metadata.drop_all(engine)
-        Base.metadata.create_all(engine)
-    
-    
-    if __name__ == '__main__':
-        import sys
-        for i in sys.argv[1:]:
-            print "\n","=================",i,"==================="
-            dict(create = create_tables)[i]()
+```python
+
+import subprocess
+
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, VARCHAR, create_engine, func, MetaData, Table, Index, event, DDL
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.types import UserDefinedType
+
+engine = create_engine('postgresql://noufal:abcdef@localhost/test', echo = True)
+Base = declarative_base()
+Session = sessionmaker(bind = engine)
+session = Session()
+
+class TsVector(UserDefinedType):
+    "Holds a TsVector column"
+
+    name = "TSVECTOR"
+
+    def get_col_spec(self):
+        return self.name
+
+class Example(Base):
+    __tablename__ = 'example'
+
+    name = Column(VARCHAR(10), primary_key = True)
+    details = Column(String)
+    details_tsvector = Column(TsVector)
+
+
+def create_tables():
+    Base.metadata.drop_all(engine)
+    Base.metadata.create_all(engine)
+
+
+if __name__ == '__main__':
+    import sys
+    for i in sys.argv[1:]:
+        print "\n","=================",i,"==================="
+        dict(create = create_tables)[i]()
+```
 
 ### Add a few helper functions
 
 I'm adding a new function called `insert_data` like so
 
-    def insert_data():
-        for i in range(1, 20):
-            u = Example(name = "name-{}".format(i),
-                        details = subprocess.Popen("/usr/games/fortune", stdout = subprocess.PIPE).stdout.read())
-            session.add(u)
-            print ".",
-        session.commit()
+```python
+def insert_data():
+    for i in range(1, 20):
+        u = Example(name = "name-{}".format(i),
+                    details = subprocess.Popen("/usr/games/fortune", stdout = subprocess.PIPE).stdout.read())
+        session.add(u)
+        print ".",
+    session.commit()
+```
 
 And another called `dump_data` like so
 
-    def dump_data():
-        for i in session.query(Example):
-            print "name: ", i.name
-            print "details: \n------------\n",i.details
-            print "details_tsvector: \n--------\n",i.details_tsvector
-            print "=================================================="
+```python
+def dump_data():
+    for i in session.query(Example):
+        print "name: ", i.name
+        print "details: \n------------\n",i.details
+        print "details_tsvector: \n--------\n",i.details_tsvector
+        print "=================================================="
+```
 
 and making them available from the command line using
 
-
-     dict(create = create_tables,
-          insert = insert_data,
-          dump = dump_data)[i]()
+```python
+dict(create = create_tables,
+    insert = insert_data,
+    dump = dump_data)[i]()
+```
 
 Now, I can run
 
