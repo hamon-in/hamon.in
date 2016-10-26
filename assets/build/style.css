@@ -744,6 +744,9 @@ hr {
   overflow: hidden;
   white-space: nowrap;
 }
+.clearboth {
+  clear: both;
+}
 .indent-one,
 .prose ol,
 .prose ul,
