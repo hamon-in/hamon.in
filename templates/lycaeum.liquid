@@ -55,9 +55,3 @@ topic: /topics/technology
     {{ page.body | markdownify }}
   </div>
 </article>
-
-{%
-  include articles_listing_by_topic.liquid
-  topic_id=page.topic
-  title_append=' Guides'
-%}
