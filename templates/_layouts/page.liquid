@@ -1,0 +1,20 @@
+---
+layout: base
+---
+
+
+<article>
+  <header class="page-header">
+    <div class="container">
+      <h2 class="title-one">
+        {{ page.title }}
+      </h2>
+      
+      <div class="page-caption  size-xlarge">
+        {{ page.brief | markdownify }}
+      </div>
+    </div>
+  </header>
+  
+  {{ content }}
+</article>

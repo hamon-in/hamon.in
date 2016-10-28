@@ -4,22 +4,16 @@ layout: base
 
 ---
 
-
 <header class="page-header">
   <div class="container">
-    <h2 class="size-xxlarge title-one">
+    <h2 class="title-one">
       {{ page.title }}
     </h2>
     
-    <div class="indent-one title-type">
+    <div class="page-caption size-xlarge">
       <p>
         Articles &amp; Guides published under
         the topic {{ page.title }}.
-        <br>
-        <br>
-        <a class="silent" href="{{ site.baseurl | append: '/topics' }}">
-          &larr; All Topics
-        </a>
       </p>
     </div>
   </div>
@@ -30,3 +24,11 @@ layout: base
   title=false
   topic=page
 %}
+
+<div class="wrapper">
+  <p class="container">
+    <a class="title-type size-small" href="{{ site.baseurl | append: '/topics' }}">
+      &lt; All Topics
+    </a>
+  </p>
+</div>

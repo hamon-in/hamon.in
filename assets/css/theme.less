@@ -7,28 +7,26 @@
 /* Base Styles */
 
 html, body {
-    background: @brand-three;
-    color: @brand-one;
+    background: lighten(@brand-three, 50%);
+    background: @brand-one;
+    // color: @brand-three;
+    color: @brand-two;
 }
 body {
     background: url(../img/bg.png) repeat-x scroll bottom center;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
 }
 a,
 a:visited {
     color: inherit;
     text-decoration: underline;
-    outline: 0.15rem solid transparent;
 }
 a.silent {
     color: inherit !important;
     text-decoration: none;
 }
 a:not(.silent-hover):hover {
-    transition: all 0.2s;
-    background-color: @brand-three;
-    outline: 0.15rem solid @brand-three;
-    color: @brand-one !important;
+    // transition: all 0.2s;
     text-decoration: none;
 }
 
@@ -56,7 +54,7 @@ a:not(.silent-hover):hover {
     background-color: @brand-three;
 }
 .fill-brand-four {
-    color: @brand-one;
+    color: @brand-three;
     background-color: @brand-four;
 }
 .fill-brand-five {

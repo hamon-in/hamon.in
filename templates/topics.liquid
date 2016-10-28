@@ -1,35 +1,24 @@
 ---
 
-layout: base
+layout: page
 permalink: /topics/
 
 title: Topics
+brief: |
+  Our articles and guides, categorised
+  by topic.
 
 ---
 
-
-<header class="page-header">
+<div class="wrapper">
   <div class="container">
-    <h2 class="size-xxlarge title-one">
-      {{ page.title }}
-    </h2>
-    
-    <ul class="bullet-list title-type">
-      {% assign nav_items = site.topics %}
-      {% for item in nav_items %}
-        <li>
-          <a href="#{{ item.title | slugify }}">
-            {{ item.title }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+    {% for topic in site.topics %}
+      {%
+        include articles_listing_by_topic.liquid
+        topic=topic
+        outer_class="teaser-spacer"
+        inner_class=" "
+      %}
+    {% endfor %}
   </div>
-</header>
-
-{% for topic in site.topics %}
-  {%
-    include articles_listing_by_topic.liquid
-    topic=topic
-  %}
-{% endfor %}
+</div>

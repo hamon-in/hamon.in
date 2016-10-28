@@ -2,11 +2,12 @@
 layout: html
 
 nav:
+  Home:         /
   Work:         /work/
   About:        /about/
-  The Lycaeum:  /lycaeum/
   Articles:     /articles/
-  Hire Us:      /contact/
+  Contact:      /contact/
+  The Lycaeum:  /lycaeum/
 
 footer_nav:
   Home:         /
@@ -20,7 +21,7 @@ footer_nav:
 
 ---
 
-<header class="container">
+<header class="header container">
   <a title="Hamon - Home" class="header-logo" href="{{ site.baseurl | append: '/' }}">
     <h1 class="ir">
       Hamon
@@ -28,10 +29,15 @@ footer_nav:
   </a>
   
   <nav class="header-nav">
-    <ul class="bullet-list title-type size-regular">
+    <ul class="bullet-list title-type size-small">
       {% for item in layout.nav %}
+        {% if page.url == item[1] %}
+          {% assign attr = 'class="active"' %}
+        {% else %}
+          {% assign attr = '' %}
+        {% endif %}
         <li>
-          <a href="{{ site.baseurl | append: item[1] }}">
+          <a {{ attr }} href="{{ site.baseurl | append: item[1] }}">
             {{ item[0] | smartify }}
           </a>
         </li>
@@ -44,7 +50,7 @@ footer_nav:
 {{ content }}
 
 
-<footer class="clearboth container">
+<footer class="clearboth container hidden">
   <a class="footer-logo silent-hover" href="{{ site.baseurl | append: '/' }}">
     <h1 class="ir">
       Hamon

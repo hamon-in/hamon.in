@@ -1,15 +1,10 @@
 ---
-layout: base
+layout: page
 permalink: /contact/
 
-title: Hire Us
+title: Contact
 
 brief: |
-  Hire us,  
-  apply to work,  
-  or just say hello.
-
-body: |
   We work with clients from a wide variety of domains from all over
   the world. If you'd like to hire us to help you with your product,
   give us a shout.
@@ -33,19 +28,9 @@ contact:
 
 ---
 
-<header class="page-header">
-  <div class="container">
-    <h2 class="size-xxlarge title-one">
-      Contact
-    </h2>
-    
-    <div class="indent-one title-type">
-      {{ page.brief | markdownify }}
-    </div>
-  </div>
-</header>
 
-<article class="wrapper">
+
+<section class="wrapper">
   <div class="container prose">
     {% if page.body %}
       <div class="prose">
@@ -55,13 +40,13 @@ contact:
     
     <dl>
       {% for option in page.contact %}
-        <dt class="title-three">
+        <dt class="title-three size-small brand-three">
           {{ option[0] | smartify }}
         </dt>
-        <dd class="indent-one prose title-type">
+        <dd class="prose title-types">
           {{ option[1] | markdownify }}
         </dd>
       {% endfor %}
     </dl>
   </div>
-</article>
+</section>

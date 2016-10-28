@@ -155,36 +155,36 @@ This is what I need for my application but I need to do it using SQLAlchemy insi
 
 To play with the whole thing, I have a tiny program that takes command line arguments to run various database operations. It's what I use to manually test the code. Here it is. There are a few imports which are not necessary at this point but which we'll use later. 
 
+```python
+import subprocess
 
-    import subprocess
-    
-    from sqlalchemy.ext.declarative import declarative_base
-    from sqlalchemy import Column, Integer, String, VARCHAR, create_engine, func, MetaData, Table, Index, event, DDL
-    from sqlalchemy.orm import sessionmaker
-    
-    engine = create_engine('postgresql://noufal:abcdef@localhost/test', echo = True)
-    Base = declarative_base()
-    Session = sessionmaker(bind = engine)
-    session = Session()
-    
-    class Example(Base):
-        __tablename__ = 'example'
-    
-        name = Column(VARCHAR(10), primary_key = True)
-        details = Column(String)
-    
-    
-    def create_tables():
-        Base.metadata.drop_all(engine)
-        Base.metadata.create_all(engine)
-    
-    
-    if __name__ == '__main__':
-        import sys
-        for i in sys.argv[1:]:
-            print "\n","=================",i,"==================="
-            dict(create = create_tables)[i]()
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, VARCHAR, create_engine, func, MetaData, Table, Index, event, DDL
+from sqlalchemy.orm import sessionmaker
 
+engine = create_engine('postgresql://noufal:abcdef@localhost/test', echo = True)
+Base = declarative_base()
+Session = sessionmaker(bind = engine)
+session = Session()
+
+class Example(Base):
+    __tablename__ = 'example'
+
+    name = Column(VARCHAR(10), primary_key = True)
+    details = Column(String)
+
+
+def create_tables():
+    Base.metadata.drop_all(engine)
+    Base.metadata.create_all(engine)
+
+
+if __name__ == '__main__':
+    import sys
+    for i in sys.argv[1:]:
+        print "\n","=================",i,"==================="
+        dict(create = create_tables)[i]()
+```
 
 This should be familiar to you if you've used SQLAlchemy before. It simply defines a table in the new declarative format. One difference between this and our original setup is that the `name` field is now a primary key and therefore has a uniqueness constraints and an auto increment. The file is called `sample.py` If we run
 
@@ -208,12 +208,11 @@ class TsVector(UserDefinedType):
 
 The `get_col_spec` function is used by the expression compiler to decide what the name of the type will be in the DDL. Since it's called `TSVECTOR`, that's what we should return here. The core types, as far as I know have their types coded directly into the compiler (e.g. For the SQLAlchemy provided `Boolean` type translates to the `BOOLEAN` type in the DDL). For Use defined types, the compiler will explicitly call the `get_col_spec` function to get the type name. This is the bare minimum to create the table.
 
-### Creating the tables.
+### Creating the tables
 
 First, we add the above snippet to our code and then we add a column of type `TsVector` to our `Example` class and run the script again. This time, we'll get the table with the `tsvector` column. Our code looks like this now.
 
 ```python
-
 import subprocess
 
 from sqlalchemy.ext.declarative import declarative_base

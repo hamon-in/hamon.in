@@ -2,13 +2,13 @@
   {% for article in include.articles reversed %}
     {% assign link = site.baseurl | append: article.url %}
     {% unless article.id == include.exclude_id %}
-      <li class="teaser-spacer">
-        <h3 class="title-three">
+      <li class="embed-spacer">
+        <h3 class="size-regular title-two brand-three">
           <a href="{{ link }}">
             {{ article.title | smartify }}
           </a>
         </h3>
-        <div class="indent-one prose">
+        <div class="prose">
           {{ article.brief | markdownify }}
           <p class="collapse">
             {% if article.author %}

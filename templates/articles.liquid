@@ -1,31 +1,16 @@
 ---
 
-layout: base
+layout: page
 permalink: /articles/
 
-title: Articles & Guides
+title: Articles
+
+brief: |
+  Discourse on business and culture; guides
+  on technology.
 
 ---
 
-
-<header class="page-header">
-  <div class="container">
-    <h2 class="size-xxlarge title-one">
-      {{ page.title }}
-    </h2>
-    
-    <ul class="bullet-list title-type">
-      {% assign nav_items = site.topics %}
-      {% for item in nav_items %}
-        <li>
-          <a href="{{ site.baseurl | append: item.url }}">
-            {{ item.title }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-</header>
 
 <section class="wrapper">
   <div class="container">

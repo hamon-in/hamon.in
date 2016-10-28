@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: page
 permalink: /work/
 
 title: Work
@@ -50,23 +50,13 @@ clients:
 
 ---
 
-<header class="page-header">
-  <div class="container">
-    <h2 class="size-xxlarge title-one">
-      {{ page.title }}
-    </h2>
-    
-    <div class="indent-one title-type">
-      {{ page.brief | markdownify }}
-    </div>
-  </div>
-</header>
+
 
 <ul>
   {% for client in page.clients %}
     <li class="wrapper">
       <article class="container">
-        <h1 class="title-four">
+        <h1 class="title-four  size-regular">
           {% if client.link %}
             <a class="silent" href="{{ client.link }}">
               {{ client.title }}

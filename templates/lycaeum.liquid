@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: page
 permalink: /lycaeum/
 
 title: The Lycaeum
@@ -30,19 +30,8 @@ topic: /topics/technology
 
 ---
 
-<header class="page-header">
-  <div class="container">
-    <h2 class="size-xxlarge title-one">
-      {{ page.title }}
-    </h2>
-    
-    <div class="indent-one title-type">
-      {{ page.brief | markdownify }}
-    </div>
-  </div>
-</header>
 
-<article class="wrapper">
+<section class="wrapper">
   <div class="container prose">
     {% if page.logo %}
       <figure class="contain-width centered">
@@ -54,4 +43,4 @@ topic: /topics/technology
     
     {{ page.body | markdownify }}
   </div>
-</article>
+</section>

@@ -1,9 +1,13 @@
 ---
 
-layout: base
+layout: page
 permalink: /about/
 
 title: About
+
+brief: |
+  This is Hamon in one line that is ideally
+  no more than 140 characters long.
 
 about:
   - 
@@ -86,56 +90,35 @@ team:
 ---
 
 
-<header class="page-header">
+
+<section class="wrapper">
   <div class="container">
-    <h2 class="size-xxlarge title-one">
-      {{ page.title }}
-    </h2>
-    
-    <ul class="title-type bullet-list">
-      {% assign nav_items = page.about | push: page.team %}
-      {% for section in nav_items %}
-        <li>
-          <a href="#{{ section.title | slugify }}">
+    <ul>
+      {% for section in page.about %}
+        <li id="{{ section.title | slugify }}" class="teaser-spacer">
+          <h3 class="size-regular title-four">
             {{ section.title }}
-          </a>
+          </h3>
+          <div class="prose">
+            {{ section.body | markdownify }}
+          </div>
         </li>
       {% endfor %}
     </ul>
-  </div>
-</header>
-
-<section class="wrapper">
-  <ul class="container">
-    {% for section in page.about %}
-      <li id="{{ section.title | slugify }}" class="teaser-spacer">
-        <h3 class="size-xlarge title-four">
-          {{ section.title }}
-        </h3>
-        <div class="prose">
-          {{ section.body | markdownify }}
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-</section>
-
-<section id="{{ page.team.title | slugify }}" class="wrapper">
-  <div class="container">
-    <h3 class="size-xlarge title-four">
+    <h3 id="{{ page.team.title | slugify }}" class="size-regular title-four">
       {{ page.team.title }}
     </h3>
-    <ul>
+    <ul class="teaser-spacer">
       {% for person in page.team.members %}
-        <li>
+        <li class="embed-spacer">
           <h4 class="title-three">
             {{ person.name }}
           </h4>
-          <div class="indent-one prose">
+          <div class="prose">
             {{ person.bio | markdownify }}
             
             {% if person.links %}
-              <ul class="links-list title-type title-label">
+              <ul class="links-list title-type size-small">
                 {% for link in person.links %}
                   <li>
                     <a href="{{ link[1] }}">{{ link[0] }}</a>
