@@ -22,28 +22,29 @@ footer_nav:
 ---
 
 <header class="header container">
-  <a title="Hamon - Home" class="header-logo" href="{{ site.baseurl | append: '/' }}">
-    <h1 class="ir">
-      Hamon
-    </h1>
-  </a>
-  
-  <nav class="header-nav">
-    <ul class="bullet-list title-type size-small">
-      {% for item in layout.nav %}
-        {% if page.url == item[1] %}
-          {% assign attr = 'class="active"' %}
-        {% else %}
-          {% assign attr = '' %}
-        {% endif %}
-        <li>
-          <a {{ attr }} href="{{ site.baseurl | append: item[1] }}">
-            {{ item[0] | smartify }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
+  <div class="header-contents">
+    <a title="Hamon - Home" class="header-logo" href="{{ site.baseurl | append: '/' }}">
+      <h1 class="ir">
+        Hamon
+      </h1>
+    </a>
+    <nav class="header-nav">
+      <ul class="bullet-list title-type size-small">
+        {% for item in layout.nav %}
+          {% if page.url == item[1] %}
+            {% assign attr = 'class="active"' %}
+          {% else %}
+            {% assign attr = '' %}
+          {% endif %}
+          <li>
+            <a {{ attr }} href="{{ site.baseurl | append: item[1] }}">
+              {{ item[0] | smartify }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
 </header>
 
 

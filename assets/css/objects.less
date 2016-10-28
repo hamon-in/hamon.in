@@ -114,46 +114,40 @@
 
 // base
 .header {
-    
-    // padding-top: 0;
-    // padding-bottom: 0;
     width: 100%;
-    // margin-top: 2rem;
+    padding-bottom: 0;
+}
+.header-contents {
+    overflow: auto;
+    .sm-plus({
+        position: fixed;
+        z-index: 100;
+    });
 }
 .header-logo {
-    position: fixed;
     float: left;
     display: block;
-    width: 12rem;
-    margin: 0 0 0 -0.5rem;
-    padding: 0.5rem 0 0.5rem 0.5rem;
+    width: 6rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    background: white;
     .ir {
         display: block;
         margin: 0;
-        height: 7rem;
+        height: 6rem;
         width: 100%;
-        background: url(../img/hamon-monogram.svg) no-repeat scroll left top;
+        background: white url(../img/hamon-monogram.svg) no-repeat scroll left top;
         background-size: contain;
     }
-    .sm-plus({
-        // float: none;
-        // position: relative;
-        z-index: 100;
-        @bwidth: 0;
-        width: 6rem + 2*@bwidth;
-        margin: 0 auto;
-        padding: 0 @bwidth;
-        background: white;
-        .ir { height: 6rem; width: 6rem; margin: auto; }
-    });
 }
 .header-nav {
-    float: left;
-    clear: both;
+    float: right;
     text-transform: uppercase;
-    @vshift: 7rem;
-    margin: @vshift auto -@vshift;
-    
+    margin: 0;
+    .sm-plus({
+        float: left;
+        clear: both;
+    });
     a:after { display: none; }
     a:hover { text-decoration: underline; }
     a.active{

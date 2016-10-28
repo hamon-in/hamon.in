@@ -1305,47 +1305,46 @@ a:not(.silent-hover):hover {
 }
 .header {
   width: 100%;
+  padding-bottom: 0;
+}
+.header-contents {
+  overflow: auto;
+}
+@media (min-width: 47em) {
+  .header-contents {
+    position: fixed;
+    z-index: 100;
+  }
 }
 .header-logo {
-  position: fixed;
   float: left;
   display: block;
-  width: 180px;
-  width: 12rem;
-  margin: 0 0 0 -7.5px;
-  margin: 0 0 0 -0.5rem;
-  padding: 7.5px 0 7.5px 7.5px;
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  width: 90px;
+  width: 6rem;
+  margin: 0 0 30px;
+  margin: 0 0 2rem;
+  padding: 0;
+  background: white;
 }
 .header-logo .ir {
   display: block;
   margin: 0;
-  height: 105px;
-  height: 7rem;
+  height: 90px;
+  height: 6rem;
   width: 100%;
-  background: url(../img/hamon-monogram.svg) no-repeat scroll left top;
+  background: white url(../img/hamon-monogram.svg) no-repeat scroll left top;
   background-size: contain;
 }
-@media (min-width: 47em) {
-  .header-logo {
-    z-index: 100;
-    width: 6rem;
-    margin: 0 auto;
-    padding: 0 0;
-    background: white;
-  }
-  .header-logo .ir {
-    height: 6rem;
-    width: 6rem;
-    margin: auto;
-  }
-}
 .header-nav {
-  float: left;
-  clear: both;
+  float: right;
   text-transform: uppercase;
-  margin: 105px auto -105px;
-  margin: 7rem auto -7rem;
+  margin: 0;
+}
+@media (min-width: 47em) {
+  .header-nav {
+    float: left;
+    clear: both;
+  }
 }
 .header-nav a:after {
   display: none;
