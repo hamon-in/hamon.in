@@ -15,7 +15,7 @@
   
 {% if length > 0 %}
   <section id="{{ topic.title | slugify }}" class="{{ include.outer_class|default: "wrapper" }}">
-    <div class="{{ include.inner_class|default: "container" }}">
+    <div class="{{ include.inner_class|default: "" }}">
       {% unless include.title == false %}
         <h3 class="size-regular title-four">
           {{ topic.title | append: include.title_append | prepend: include.title_prepend }}

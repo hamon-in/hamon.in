@@ -1011,8 +1011,8 @@ p + .collapse {
 .title-one {
   text-transform: uppercase;
   font-weight: normal;
-  margin: 15px 0 22.5px;
-  margin: 1rem 0 1.5rem;
+  margin: 15px 0 11.25px;
+  margin: 1rem 0 0.75rem;
   color: #825D4E;
 }
 .title-two {
@@ -1173,10 +1173,9 @@ a:not(.silent-hover):hover {
 }
 /* Animations */
 /* Objects */
-.bleed,
-.wrapper {
-  padding: 22.5px 7.5px;
-  padding: 1.5rem 0.5rem;
+.page-header {
+  padding: 10vh 6.75px 0;
+  padding: 10vh 0.45rem 0;
 }
 .wrapper {
   margin: 7.5px;
@@ -1185,41 +1184,27 @@ a:not(.silent-hover):hover {
   padding: 1rem 0;
 }
 @media (min-width: 47em) {
-  .wrapper {
-    max-width: 40rem;
+  .wrapper,
+  .page-header {
+    padding: 2rem 0;
+    max-width: 35rem;
     margin: 0 0 0 auto;
-    padding: 0;
+    margin-left: 30%;
   }
 }
 @media (min-width: 70em) {
-  .wrapper {
+  .wrapper,
+  .page-header {
+    padding-left: 25%;
+    padding-right: 25%;
+    max-width: 90rem;
     margin: 0 auto;
-  }
-}
-.padded,
-.page-header {
-  padding: 0 6.75px;
-  padding: 0 0.45rem;
-}
-.page-header {
-  padding-top: 10vh;
-}
-@media (min-width: 47em) {
-  .page-header {
-    padding: 0;
-    width: 40rem;
-    margin: 0 0 0 auto;
-  }
-}
-@media (min-width: 70em) {
-  .page-header {
-    width: 40rem;
-    margin: auto;
   }
 }
 .page-caption {
   text-transform: none;
   font-weight: normal;
+  margin-top: 0;
 }
 .bullet-list a {
   display: block;
@@ -1306,9 +1291,6 @@ a:not(.silent-hover):hover {
 .header {
   width: 100%;
   padding-bottom: 0;
-}
-.header-contents {
-  overflow: auto;
 }
 @media (min-width: 47em) {
   .header-contents {

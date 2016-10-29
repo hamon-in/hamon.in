@@ -4,42 +4,32 @@
 @sm-sidebar: 40%;
 @md-sidebar: 35%;
 
-.bleed,
-.wrapper {
-    padding:1.5rem 0.5rem;
+.page-header {
+    padding: 10vh 0.45rem 0;
 }
 .wrapper {
     margin: 0.5rem;
-    padding: 1rem 0;
-    .sm-plus({
-        max-width: 40rem;
-        margin: 0 0 0 auto;
-        padding: 0;
-    });
-    .md-plus({
-        margin: 0 auto;
-    });
+    padding:1rem 0;
 }
-
-.padded {
-    padding: 0 0.45rem;
-}
+.wrapper,
 .page-header {
-    &:extend(.padded);
-    padding-top: 10vh;
     .sm-plus({
-        padding: 0;
-        width: 40rem;
+        padding: 2rem 0;
+        max-width: 35rem;
         margin: 0 0 0 auto;
+        margin-left: 30%;
     });
     .md-plus({
-        width: 40rem;
-        margin: auto;
+        padding-left: 25%;
+        padding-right:25%;
+        max-width: 90rem;
+        margin: 0 auto;
     });
 }
 .page-caption {
     text-transform: none;
     font-weight: normal;
+    margin-top: 0;
 }
 
 
@@ -118,7 +108,6 @@
     padding-bottom: 0;
 }
 .header-contents {
-    overflow: auto;
     .sm-plus({
         position: fixed;
         z-index: 100;
