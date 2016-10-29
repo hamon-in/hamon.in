@@ -17,32 +17,28 @@ logo:
 {% assign work_page = site.pages | where: 'name', 'work.liquid' | first %}
 {% assign about_page = site.pages | where: 'name', 'about.liquid' | first %}
 {% assign contact_page = site.pages | where: 'name', 'contact.liquid' | first %}
-{% assign client_testimonial = false %}
 
 <div>
-  <section class="wrapper wrapper-zigzag">
-    <div class=" prose">
-      {% if page.logo %}
-        <figure class="contain-width centered">
-          <a class="silent-hover" href="{{ page.logo.link }}">
-            <img alt="{{ page.logo.alt }}" src="{{ site.baseurl | append: page.logo.src }}">
-          </a>
-        </figure>
-      {% endif %}
-      
+  <section class="wrapper">
+    <div class="page-caption size-large">
       {{ page.body | markdownify }}
+      
+      <p class="title-type">
+        <a href="{{ site.baseurl | append: 'about' }}">About us &amp; our services &gt;</a>
+      </p>
     </div>
   </section>
   
-  <section class="wrapper wrapper-zigzag">
+  
+  <section class="wrapper">
     <div class="">
-      <h3 class="size-xlarge title-four">
+      <h3 class="size-regular title-four">
         Clients &amp; Projects
       </h3>
       
       <ul>
         {% for client in work_page.clients %}
-          <li>
+          <li class="embed-spacer">
             <h4 class="title-three">
               {{ client.title }}
             </h4>
@@ -71,72 +67,12 @@ logo:
               </ul>
             </div>
           </li>
-          {% if client_testimonial == false and client.testimonial %}
-            {% assign client_testimonial = client.testimonial %}
-          {% endif %}
         {% endfor %}
       </ul>
     </div>
   </section>
   
-  <section class="wrapper wrapper-zigzag">
-    <div class="">
-      <div class="testimonial size-large">
-        <blockquote>
-          {{ client_testimonial.body | markdownify }}
-        </blockquote>
-        
-        <div class="testimonial-attribution">
-          <h4>
-            {{ client_testimonial.name }}
-          </h4>
-          <i class="title-type">
-            {{ client_testimonial.designation }},
-            {{ client_testimonial.org }}
-          </i>
-        </div>
-      </div>
-    </div>
-  </section>
   
-  <section class="wrapper wrapper-zigzag">
-    <div class="">
-      <h3 class="size-xlarge title-four">
-        Articles &amp; Guides
-      </h3>
-      {% include articles_listing.liquid articles=site.articles %}
-    </div>
-  </section>
-  
-  <section class="wrapper wrapper-zigzag">
-    <div class="">
-      <h3 class="size-xlarge title-four">
-        Team
-      </h3>
-      <ul>
-        {% for person in about_page.team.members %}
-          <li>
-            <h4 class="title-three">
-              {{ person.name }}
-            </h4>
-            <div class="indent-one prose">
-              {{ person.bio | markdownify }}
-              
-              {% if person.links %}
-                <ul class="links-list title-type title-label">
-                  {% for link in person.links %}
-                    <li>
-                      <a href="{{ link[1] }}">{{ link[0] }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
   
   <section class="wrapper wrapper-zigzag">
     <div class="">
@@ -145,7 +81,7 @@ logo:
           {{ contact_page.body | markdownify }}
         </div>
       {% endif %}
-      <h3 class="title-three size-xlarge">
+      <h3 class="title-three size-regular">
         <a class="" href="{{ site.baseurl | append: contact_page.url }}">
           Contact Us &rarr;
         </a>
