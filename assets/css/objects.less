@@ -6,15 +6,19 @@
 
 .page-header {
     padding: 10vh 0.45rem 0;
+    .sm-plus({
+        padding: 6.9rem 0 2rem;
+        .title-one:first-child { margin-top: 0.35rem; }
+    });
 }
 .wrapper {
     margin: 0.5rem;
     padding:1rem 0;
+    .sm-plus({ padding: 2rem 0; });
 }
 .wrapper,
 .page-header {
     .sm-plus({
-        padding: 2rem 0;
         max-width: 35rem;
         margin: 0 0 0 auto;
         margin-left: 30%;
@@ -30,6 +34,7 @@
     text-transform: none;
     font-weight: normal;
     margin-top: 0;
+    line-height: 1.35;
 }
 
 
@@ -105,7 +110,7 @@
 // base
 .header {
     width: 100%;
-    padding-bottom: 0;
+    padding: 0 0.5rem;
 }
 .header-contents {
     .sm-plus({
@@ -114,9 +119,9 @@
     });
 }
 .header-logo {
-    float: left;
+    float: right;
     display: block;
-    width: 6rem;
+    width: 8rem;
     margin: 0 0 2rem;
     padding: 0;
     background: white;
@@ -125,18 +130,16 @@
         margin: 0;
         height: 6rem;
         width: 100%;
-        background: white url(../img/hamon-monogram.svg) no-repeat scroll left top;
+        background: white url(../img/hamon-wordmark.svg) no-repeat scroll left top;
         background-size: contain;
     }
+    .sm-plus({ margin: 0.5rem 0 0.5rem; });
 }
 .header-nav {
-    float: right;
+    float: left;
     text-transform: uppercase;
-    margin: 0;
-    .sm-plus({
-        float: left;
-        clear: both;
-    });
+    margin: -0.25rem 0 0;
+    .sm-plus({ clear: both; });
     a:after { display: none; }
     a:hover { text-decoration: underline; }
     a.active{

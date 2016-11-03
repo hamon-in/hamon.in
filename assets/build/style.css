@@ -766,10 +766,16 @@ hr {
 }
 .container {
   margin: 0 auto;
-  padding-left: 22.5px;
-  padding-left: 1.5rem;
-  padding-right: 22.5px;
-  padding-right: 1.5rem;
+  padding-left: 15px;
+  padding-left: 1rem;
+  padding-right: 15px;
+  padding-right: 1rem;
+}
+@media (min-width: 25em) {
+  .container {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
 }
 @media (min-width: 47em) {
   .container {
@@ -789,6 +795,12 @@ hr {
   padding-bottom: 22.5px;
   padding-bottom: 1.5rem;
 }
+@media (min-width: 25em) {
+  .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
 @media (min-width: 47em) {
   .container {
     padding-top: 2rem;
@@ -804,6 +816,11 @@ hr {
 .container {
   max-width: 450px;
   max-width: 30rem;
+}
+@media (min-width: 25em) {
+  .container {
+    max-width: 35rem;
+  }
 }
 @media (min-width: 47em) {
   .container {
@@ -1177,6 +1194,14 @@ a:not(.silent-hover):hover {
   padding: 10vh 6.75px 0;
   padding: 10vh 0.45rem 0;
 }
+@media (min-width: 47em) {
+  .page-header {
+    padding: 6.9rem 0 2rem;
+  }
+  .page-header .title-one:first-child {
+    margin-top: 0.35rem;
+  }
+}
 .wrapper {
   margin: 7.5px;
   margin: 0.5rem;
@@ -1184,9 +1209,13 @@ a:not(.silent-hover):hover {
   padding: 1rem 0;
 }
 @media (min-width: 47em) {
+  .wrapper {
+    padding: 2rem 0;
+  }
+}
+@media (min-width: 47em) {
   .wrapper,
   .page-header {
-    padding: 2rem 0;
     max-width: 35rem;
     margin: 0 0 0 auto;
     margin-left: 30%;
@@ -1205,6 +1234,7 @@ a:not(.silent-hover):hover {
   text-transform: none;
   font-weight: normal;
   margin-top: 0;
+  line-height: 1.35;
 }
 .bullet-list a {
   display: block;
@@ -1290,7 +1320,8 @@ a:not(.silent-hover):hover {
 }
 .header {
   width: 100%;
-  padding-bottom: 0;
+  padding: 0 7.5px;
+  padding: 0 0.5rem;
 }
 @media (min-width: 47em) {
   .header-contents {
@@ -1299,10 +1330,10 @@ a:not(.silent-hover):hover {
   }
 }
 .header-logo {
-  float: left;
+  float: right;
   display: block;
-  width: 90px;
-  width: 6rem;
+  width: 120px;
+  width: 8rem;
   margin: 0 0 30px;
   margin: 0 0 2rem;
   padding: 0;
@@ -1314,17 +1345,22 @@ a:not(.silent-hover):hover {
   height: 90px;
   height: 6rem;
   width: 100%;
-  background: white url(../img/hamon-monogram.svg) no-repeat scroll left top;
+  background: white url(../img/hamon-wordmark.svg) no-repeat scroll left top;
   background-size: contain;
 }
+@media (min-width: 47em) {
+  .header-logo {
+    margin: 0.5rem 0 0.5rem;
+  }
+}
 .header-nav {
-  float: right;
+  float: left;
   text-transform: uppercase;
-  margin: 0;
+  margin: -3.75px 0 0;
+  margin: -0.25rem 0 0;
 }
 @media (min-width: 47em) {
   .header-nav {
-    float: left;
     clear: both;
   }
 }
