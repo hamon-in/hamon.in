@@ -67,7 +67,7 @@ clients:
         </h1>
         
         {% if client.projects %}
-          <h2 class="title-three size-regular">
+          <h2 class="title-three size-small">
             Projects
           </h2>
           
@@ -82,7 +82,7 @@ clients:
                     </b>
                   {% endif %}
                   {% if project.link %}
-                    <a class="truncate" href="{{ project.link }}">
+                    <a class="truncate title-type size-small" href="{{ project.link }}">
                       {% include prettyurl.liquid url=project.link %}
                     </a>
                   {% endif %}
@@ -111,7 +111,7 @@ clients:
         {% endif %}
         
         {% if client.link %}
-          <a href="{{ client.link }}">
+          <a class="title-type size-small" href="{{ client.link }}">
             {% include prettyurl.liquid url=client.link %}
           </a>
         {% endif %}

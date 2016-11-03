@@ -6,11 +6,7 @@ body: |
   
   We work in the infrastructure, automation and web domains and specialise in the Python stack.
 
-logo:
-  alt: Hamon logo
-  link: http://hamon.in
-  src: /img/hamon-wordmark.svg
-
+email: contact@hamon.in
 
 ---
 
@@ -19,12 +15,12 @@ logo:
 {% assign contact_page = site.pages | where: 'name', 'contact.liquid' | first %}
 
 <div>
-  <section class="wrapper">
+  <section class="page-header">
     <div class="page-caption size-large">
       {{ page.body | markdownify }}
       
-      <p class="title-type">
-        <a href="{{ site.baseurl | append: 'about' }}">About us &amp; our services &gt;</a>
+      <p class="title-type size-regular">
+        <a href="{{ site.baseurl | append: about_page.url }}">More about us&nbsp;&gt;</a>
       </p>
     </div>
   </section>
@@ -42,11 +38,6 @@ logo:
             <h4 class="title-three">
               {{ client.title }}
             </h4>
-            {% if client.link %}
-              <a href="{{ client.link }}">
-                {% include prettyurl.liquid url=client.link %}
-              </a>
-            {% endif %}
             <div class="prose">
               <ul>
                 {% for project in client.projects %}
@@ -58,34 +49,53 @@ logo:
                       </b>
                     {% endif %}
                     {% if project.link %}
-                      <a class="truncate" href="{{ project.link }}">
+                      <a class="truncate title-type size-small" href="{{ project.link }}">
                         {% include prettyurl.liquid url=project.link %}
                       </a>
                     {% endif %}
                   </li>
                 {% endfor %}
               </ul>
+              {% if client.link %}
+                <p class="collapse">
+                  <a class="title-type size-small" href="{{ client.link }}">
+                    {% include prettyurl.liquid url=client.link %}
+                  </a>
+                </p>
+              {% endif %}
             </div>
           </li>
         {% endfor %}
       </ul>
+      <p class="title-type size-regular">
+        <a href="{{ site.baseurl | append: work_page.url }}">Our work&nbsp;&gt;</a>
+      </p>
     </div>
   </section>
   
   
   
-  <section class="wrapper wrapper-zigzag">
+  <section class="wrapper">
     <div class="">
-      {% if contact_page.body %}
+      <h3 class="size-regular title-four">
+        Hire Us
+      </h3>
+      {% if contact_page.brief %}
         <div class="prose">
-          {{ contact_page.body | markdownify }}
+          {{ contact_page.brief | markdownify }}
+          <p>
+            Get in touch via
+            <a class="title-type size-small" href="mailto:{{ page.email }}">
+              {{ page.email }}</a>
+            .
+          </p>
         </div>
       {% endif %}
-      <h3 class="title-three size-regular">
-        <a class="" href="{{ site.baseurl | append: contact_page.url }}">
-          Contact Us &rarr;
+      <p class="title-type size-regular">
+        <a class="title-type" href="{{ site.baseurl | append: contact_page.url }}">
+          Contact&nbsp;&gt;
         </a>
-      </h3>
+      </p>
     </div>
   </section>
 </div>

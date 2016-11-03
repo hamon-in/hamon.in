@@ -760,9 +760,19 @@ hr {
   margin-bottom: 30px;
   margin-bottom: 2rem;
 }
+@media (min-width: 70em) {
+  .embed-spacer {
+    margin-bottom: 3rem;
+  }
+}
 .teaser-spacer {
   margin-bottom: 60px;
   margin-bottom: 4rem;
+}
+@media (min-width: 70em) {
+  .teaser-spacer {
+    margin-bottom: 6rem;
+  }
 }
 .container {
   margin: 0 auto;
@@ -1065,7 +1075,7 @@ p + .collapse {
 .title-label {
   color: #825D4E;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: normal;
 }
 .prose * + h3 {
   margin-top: 45px;
