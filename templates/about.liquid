@@ -91,42 +91,40 @@ team:
 
 
 
-<section class="wrapper">
-  <ul>
-    {% for section in page.about %}
-      <li id="{{ section.title | slugify }}" class="teaser-spacer">
-        <h3 class="size-regular title-four">
-          {{ section.title }}
-        </h3>
-        <div class="prose">
-          {{ section.body | markdownify }}
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-  <h3 id="{{ page.team.title | slugify }}" class="size-regular title-four">
-    {{ page.team.title }}
-  </h3>
-  <ul class="teaser-spacer">
-    {% for person in page.team.members %}
-      <li class="embed-spacer">
-        <h4 class="title-three">
-          {{ person.name }}
-        </h4>
-        <div class="prose">
-          {{ person.bio | markdownify }}
-          
-          {% if person.links %}
-            <ul class="links-list title-type size-small">
-              {% for link in person.links %}
-                <li>
-                  <a href="{{ link[1] }}">{{ link[0] }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-</section>
+<ul>
+  {% for section in page.about %}
+    <li id="{{ section.title | slugify }}" class="teaser-spacer">
+      <h3 class="size-regular title-four">
+        {{ section.title }}
+      </h3>
+      <div class="prose">
+        {{ section.body | markdownify }}
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+<h3 id="{{ page.team.title | slugify }}" class="size-regular title-four">
+  {{ page.team.title }}
+</h3>
+<ul class="teaser-spacer">
+  {% for person in page.team.members %}
+    <li class="embed-spacer">
+      <h4 class="title-three">
+        {{ person.name }}
+      </h4>
+      <div class="prose">
+        {{ person.bio | markdownify }}
+        
+        {% if person.links %}
+          <ul class="links-list title-type size-small">
+            {% for link in person.links %}
+              <li>
+                <a href="{{ link[1] }}">{{ link[0] }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

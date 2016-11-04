@@ -30,23 +30,19 @@ contact:
 
 
 
-<section class="wrapper">
-  <div class=" prose">
-    {% if page.body %}
-      <div class="prose">
-        {{ page.body | markdownify }}
-      </div>
-    {% endif %}
-    
-    <dl>
-      {% for option in page.contact %}
-        <dt class="title-three size-small brand-three">
-          {{ option[0] | smartify }}
-        </dt>
-        <dd class="prose title-types">
-          {{ option[1] | markdownify }}
-        </dd>
-      {% endfor %}
-    </dl>
-  </div>
-</section>
+<div class="prose">
+  {% if page.body %}
+    {{ page.body | markdownify }}
+  {% endif %}
+  
+  <dl>
+    {% for option in page.contact %}
+      <dt class="title-three size-small brand-three">
+        {{ option[0] | smartify }}
+      </dt>
+      <dd class="prose title-types">
+        {{ option[1] | markdownify }}
+      </dd>
+    {% endfor %}
+  </dl>
+</div>

@@ -10,13 +10,11 @@ brief: |
 
 ---
 
-<div class="wrapper">
-  {% for topic in site.topics %}
-    {%
-      include articles_listing_by_topic.liquid
-      topic=topic
-      outer_class="teaser-spacer"
-      inner_class=" "
-    %}
-  {% endfor %}
-</div>
+{% for topic in site.topics %}
+  {%
+    include articles_listing_by_topic.liquid
+    topic=topic
+    outer_class="teaser-spacer"
+    inner_class=" "
+  %}
+{% endfor %}
