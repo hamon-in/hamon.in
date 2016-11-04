@@ -10,27 +10,10 @@
 }
 @font-face {
     font-family: gt-pressura-mono;
-    font-style: italic;
-    src: url('GT-Pressura-Mono-Regular-Italic.eot');
-    src: url('GT-Pressura-Mono-Regular-Italic.eot?#iefix') format('embedded-opentype'),
-         url('GT-Pressura-Mono-Regular-Italic.woff') format('woff'),
-         url('GT-Pressura-Mono-Regular-Italic.ttf')  format('truetype');
-}
-@font-face {
-    font-family: gt-pressura-mono;
     font-style: normal;
     font-weight: bold;
     src: url('GT-Pressura-Mono-Bold.eot');
     src: url('GT-Pressura-Mono-Bold.eot?#iefix') format('embedded-opentype'),
          url('GT-Pressura-Mono-Bold.woff') format('woff'),
          url('GT-Pressura-Mono-Bold.ttf')  format('truetype');
-}
-@font-face {
-    font-family: gt-pressura-mono;
-    font-style: italic;
-    font-weight: bold;
-    src: url('GT-Pressura-Mono-Bold-Italic.eot');
-    src: url('GT-Pressura-Mono-Bold-Italic.eot?#iefix') format('embedded-opentype'),
-         url('GT-Pressura-Mono-Bold-Italic.woff') format('woff'),
-         url('GT-Pressura-Mono-Bold-Italic.ttf')  format('truetype');
 }
