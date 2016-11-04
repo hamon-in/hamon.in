@@ -9,19 +9,13 @@ nav:
   Contact:      /contact/
   The Lycaeum:  /lycaeum/
 
-footer_nav:
-  Home:         /
-  Work:         /work/
-  About:        /about/
-  The Lycaeum:  /lycaeum/
-  Articles:     /articles/
-  Contact:      /contact/
-  GitHub:       https://github.com/hamon-in
-  Twitter:      https://twitter.com/hamon_in
+social:
+  github:       https://github.com/hamon-in
+  twitter:      https://twitter.com/hamon_in
 
 ---
 
-<header class="header ">
+<header class="header">
   <div class="header-contents clearfix">
     <a title="Hamon - Home" class="header-logo" href="{{ site.baseurl | append: '/' }}">
       <h1 class="ir">
@@ -51,7 +45,7 @@ footer_nav:
 {{ content }}
 
 
-<footer class="clearboth  hidden">
+<footer class="footer clearboth wrapper">
   <a class="footer-logo silent-hover" href="{{ site.baseurl | append: '/' }}">
     <h1 class="ir">
       Hamon
@@ -59,15 +53,10 @@ footer_nav:
   </a>
   
   <nav class="footer-nav">
-    <ul class="links-list title-type size-small title-three clearfix">
-      {% for item in layout.footer_nav %}
+    <ul class="bullet-list title-type size-small">
+      {% for item in layout.nav %}
         <li>
-          {% if item[1] contains '://' %}
-            {% assign url = item[1] %}
-          {% else %}
-            {% assign url = site.baseurl | append:item[1] %}
-          {% endif %}
-          <a href="{{ url }}">{{
+          <a href="{{ site.baseurl | append:item[1] }}">{{
             item[0] | smartify
           }}</a>
         </li>
@@ -75,13 +64,21 @@ footer_nav:
     </ul>
   </nav>
   
-  <p class="footer-fineprint title-type size-small">
-    From the coasts of Kerala, India.
-    <br>
-    <span>
-      &copy;
-      {{ site.time | date: "%Y" }}
-      Hamon Technologies LLP
-    </span>
-  </p>
+  <div class="footer-fineprint title-type size-small">
+    <p>
+      Also on
+      <a href="{{ layout.social.twitter }}">Twitter</a>
+      and
+      <a href="{{ layout.social.github }}">GitHub</a>.
+    </p>
+    <p>
+      From the coasts of Kerala, India.
+      <br>
+      <span>
+        &copy;
+        {{ site.time | date: "%Y" }}
+        Hamon Technologies LLP
+      </span>
+    </p>
+  </div>
 </footer>
