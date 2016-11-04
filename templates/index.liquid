@@ -27,75 +27,71 @@ email: contact@hamon.in
   
   
   <section class="wrapper">
-    <div class="">
-      <h3 class="size-regular title-four">
-        Clients &amp; Projects
-      </h3>
-      
-      <ul>
-        {% for client in work_page.clients %}
-          <li class="embed-spacer">
-            <h4 class="title-three">
-              {{ client.title }}
-            </h4>
-            <div class="prose">
-              <ul>
-                {% for project in client.projects %}
-                  <li>
-                    {{ project.title }}
-                    {% if project.tech %}
-                      <b class="title-label title-type">
-                        {{ project.tech | join: ', ' }}
-                      </b>
-                    {% endif %}
-                    {% if project.link %}
-                      <a class="truncate title-type size-small" href="{{ project.link }}">
-                        {% include prettyurl.liquid url=project.link %}
-                      </a>
-                    {% endif %}
-                  </li>
-                {% endfor %}
-              </ul>
-              {% if client.link %}
-                <p class="collapse">
-                  <a class="title-type size-small" href="{{ client.link }}">
-                    {% include prettyurl.liquid url=client.link %}
-                  </a>
-                </p>
-              {% endif %}
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-      <p class="title-type size-regular">
-        <a href="{{ site.baseurl | append: work_page.url }}">Our work&nbsp;&gt;</a>
-      </p>
-    </div>
+    <h3 class="size-regular title-four">
+      Clients &amp; Projects
+    </h3>
+    
+    <ul>
+      {% for client in work_page.clients %}
+        <li class="embed-spacer">
+          <h4 class="title-three">
+            {{ client.title }}
+          </h4>
+          <div class="prose">
+            <ul>
+              {% for project in client.projects %}
+                <li>
+                  {{ project.title }}
+                  {% if project.tech %}
+                    <b class="title-label title-type">
+                      {{ project.tech | join: ', ' }}
+                    </b>
+                  {% endif %}
+                  {% if project.link %}
+                    <a class="truncate title-type size-small" href="{{ project.link }}">
+                      {% include prettyurl.liquid url=project.link %}
+                    </a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+            {% if client.link %}
+              <p class="collapse">
+                <a class="title-type size-small" href="{{ client.link }}">
+                  {% include prettyurl.liquid url=client.link %}
+                </a>
+              </p>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="title-type size-regular">
+      <a href="{{ site.baseurl | append: work_page.url }}">Our work&nbsp;&gt;</a>
+    </p>
   </section>
   
   
   
   <section class="wrapper">
-    <div class="">
-      <h3 class="size-regular title-four">
-        Hire Us
-      </h3>
-      {% if contact_page.brief %}
-        <div class="prose">
-          {{ contact_page.brief | markdownify }}
-          <p>
-            Get in touch via
-            <a class="title-type size-small" href="mailto:{{ page.email }}">
-              {{ page.email }}</a>
-            .
-          </p>
-        </div>
-      {% endif %}
-      <p class="title-type size-regular">
-        <a class="title-type" href="{{ site.baseurl | append: contact_page.url }}">
-          Contact&nbsp;&gt;
-        </a>
-      </p>
-    </div>
+    <h3 class="size-regular title-four">
+      Hire Us
+    </h3>
+    {% if contact_page.brief %}
+      <div class="prose">
+        {{ contact_page.brief | markdownify }}
+        <p>
+          Get in touch via
+          <a class="title-type size-small" href="mailto:{{ page.email }}">
+            {{ page.email }}</a>
+          .
+        </p>
+      </div>
+    {% endif %}
+    <p class="title-type size-regular">
+      <a class="title-type" href="{{ site.baseurl | append: contact_page.url }}">
+        Contact&nbsp;&gt;
+      </a>
+    </p>
   </section>
 </div>

@@ -4,57 +4,53 @@ layout: base
 
 <article>
   <header class="page-header">
-    <div class="">
-      <h4 class="title-one">
-        Article
-      </h4>
-      <h1 class="size-xlarge prose-leading page-caption prose-type embed-spacer">
-        {{ page.title | smartify }}
-      </h1>
-      <p class="">
-        {% if page.author %}
-          <i class="size-small">
-            by
-            {% if page.author.link %}
-              <a href="{{ page.author.link }}">
-                {{ page.author.name }}</a>
-            {% else %}
-              {{ page.author.name }}
-            {% endif %}
-          </i>
-          <br>
-        {% endif %}
-        <span class="title-type size-xsmall">
-          <time>
-            {{ page.date | date: '%b %-d, %Y' }}
-          </time>
-          {% if page.topics %}
-            in
-            {% for topic_id in page.topics %}
-              {% assign topic = site.topics | where: 'id', topic_id | first %}
-              {% if topic %}
-                <a class="" href="{{ site.baseurl | append: topic.url }}">
-                  {{ topic.title
-                }}</a>{%
-                  unless forloop.last
-                %}<span class="size-xsmall">{%
-                  if forloop.rindex0 == 1
-                %} &amp;
-                {% else %}, {% endif %}
-                </span>
-                {% endunless %}
-              {% endif %}
-            {% endfor %}
+    <h4 class="title-one">
+      Article
+    </h4>
+    <h1 class="size-xlarge prose-leading page-caption prose-type embed-spacer">
+      {{ page.title | smartify }}
+    </h1>
+    <p>
+      {% if page.author %}
+        <i class="size-small">
+          by
+          {% if page.author.link %}
+            <a href="{{ page.author.link }}">
+              {{ page.author.name }}</a>
+          {% else %}
+            {{ page.author.name }}
           {% endif %}
-        </span>
-      </p>
-    </div>
+        </i>
+        <br>
+      {% endif %}
+      <span class="title-type size-xsmall">
+        <time>
+          {{ page.date | date: '%b %-d, %Y' }}
+        </time>
+        {% if page.topics %}
+          in
+          {% for topic_id in page.topics %}
+            {% assign topic = site.topics | where: 'id', topic_id | first %}
+            {% if topic %}
+              <a href="{{ site.baseurl | append: topic.url }}">
+                {{ topic.title
+              }}</a>{%
+                unless forloop.last
+              %}<span class="size-xsmall">{%
+                if forloop.rindex0 == 1
+              %} &amp;
+              {% else %}, {% endif %}
+              </span>
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </span>
+    </p>
   </header>
   
-  <section class="wrapper">
-    <div class=" prose">
-      {{ content }}
-    </div>
+  <section class="wrapper prose">
+    {{ content }}
   </section>
 </article>
 
