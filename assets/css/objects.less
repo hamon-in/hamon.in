@@ -35,13 +35,22 @@
 
 
 // objects
-.bullet-list {
-    // &:extend(.indent-one);
+.nav-list {
+    text-transform: uppercase;
     a {
         display: block;
         padding: 0.25rem 0;
         text-decoration: none;
-        &:after { content: "→"; }
+    }
+    a:hover { text-decoration: underline; }
+    a.active{
+        font-weight: bold;
+        &:before {
+            position: absolute;
+            content: ">";
+            margin-left:-0.75em;
+            margin-top: -0.05em;
+        }
     }
 }
 .prose .links-list,
@@ -75,11 +84,11 @@
         content: "“";
         .title-type;
         position: absolute;
-        font-size: 15rem;
+        font-size: 4rem;
         line-height: 0;
         opacity: 0.2;
         color: @brand-three;
-        margin-left: -0.2em;
+        margin-left: -0.4em;
         margin-top: 0.2em;
         z-index: @layer-base;
     }
@@ -87,7 +96,6 @@
 .testimonial-attribution {
     margin-left: auto;
     max-width: 15rem;
-    // margin-bottom: 3rem;
     
     &:before {
         content: "—";
@@ -100,6 +108,10 @@
     > i { font-style: normal; }
 }
 
+#instantclick-bar {
+    background-color: @brand-three;
+}
+
 
 
 // base
@@ -109,8 +121,11 @@
 }
 .header-contents {
     .sm-plus({
-        position: fixed;
-        z-index: 100;
+        position: absolute;
+        @media (min-height: 22em) {
+            position: fixed;
+            z-index: 100;
+        }
     });
 }
 .header-logo {
@@ -118,7 +133,6 @@
     display: block;
     width: 8rem;
     margin: 0 0 2rem;
-    padding: 0;
     background: white;
     .ir {
         display: block;
@@ -128,25 +142,16 @@
         background: white url(../img/hamon-wordmark.svg) no-repeat scroll left top;
         background-size: contain;
     }
-    .sm-plus({ margin: 0.5rem 0 0.5rem; });
+    .sm-plus({
+        margin: 0.5rem 0;
+        float: left;
+    });
 }
 .header-nav {
     float: left;
     text-transform: uppercase;
     margin: -0.25rem 0 0;
     .sm-plus({ clear: both; });
-    a:after { display: none; }
-    a:hover { text-decoration: underline; }
-    a.active{
-        font-weight: bold;
-        &:before {
-            position: absolute;
-            content: ">";
-            margin-left:-0.75em;
-            margin-top: -0.05em;
-        }
-    }
-    ul { padding-left: 0; }
 }
 
 .footer {
@@ -177,9 +182,6 @@
 }
 .footer-nav {
     margin: -0.25rem 0 1.5rem;
-    text-transform: uppercase;
-    a:after { display: none; }
-    a:hover { text-decoration: underline; }
     .sm-plus({ display: none; });
 }
 .footer-fineprint {}

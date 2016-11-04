@@ -23,7 +23,7 @@ social:
       </h1>
     </a>
     <nav class="header-nav">
-      <ul class="bullet-list title-type size-small">
+      <ul class="nav-list title-type size-small">
         {% for item in layout.nav %}
           {% if page.url == item[1] %}
             {% assign attr = 'class="active"' %}
@@ -53,7 +53,7 @@ social:
   </a>
   
   <nav class="footer-nav">
-    <ul class="bullet-list title-type size-small">
+    <ul class="nav-list title-type size-small">
       {% for item in layout.nav %}
         <li>
           <a href="{{ site.baseurl | append:item[1] }}">{{

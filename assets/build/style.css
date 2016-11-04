@@ -1244,14 +1244,26 @@ a:not(.silent-hover):hover {
   margin-top: 0;
   line-height: 1.35;
 }
-.bullet-list a {
+.nav-list {
+  text-transform: uppercase;
+}
+.nav-list a {
   display: block;
   padding: 3.75px 0;
   padding: 0.25rem 0;
   text-decoration: none;
 }
-.bullet-list a:after {
-  content: "→";
+.nav-list a:hover {
+  text-decoration: underline;
+}
+.nav-list a.active {
+  font-weight: bold;
+}
+.nav-list a.active:before {
+  position: absolute;
+  content: ">";
+  margin-left: -0.75em;
+  margin-top: -0.05em;
 }
 .prose .links-list,
 .links-list {
@@ -1295,12 +1307,12 @@ a:not(.silent-hover):hover {
   content: "“";
   font-family: GT Pressura Mono, sans-serif;
   position: absolute;
-  font-size: 225px;
-  font-size: 15rem;
+  font-size: 60px;
+  font-size: 4rem;
   line-height: 0;
   opacity: 0.2;
   color: #825D4E;
-  margin-left: -0.2em;
+  margin-left: -0.4em;
   margin-top: 0.2em;
   z-index: 0;
 }
@@ -1326,12 +1338,20 @@ a:not(.silent-hover):hover {
 .testimonial-attribution > i {
   font-style: normal;
 }
+#instantclick-bar {
+  background-color: #825D4E;
+}
 .header {
   width: 100%;
   padding: 0 7.5px;
   padding: 0 0.5rem;
 }
 @media (min-width: 47em) {
+  .header-contents {
+    position: absolute;
+  }
+}
+@media (min-width: 47em) and (min-height: 22em) {
   .header-contents {
     position: fixed;
     z-index: 100;
@@ -1344,7 +1364,6 @@ a:not(.silent-hover):hover {
   width: 8rem;
   margin: 0 0 30px;
   margin: 0 0 2rem;
-  padding: 0;
   background: white;
 }
 .header-logo .ir {
@@ -1358,7 +1377,8 @@ a:not(.silent-hover):hover {
 }
 @media (min-width: 47em) {
   .header-logo {
-    margin: 0.5rem 0 0.5rem;
+    margin: 0.5rem 0;
+    float: left;
   }
 }
 .header-nav {
@@ -1371,24 +1391,6 @@ a:not(.silent-hover):hover {
   .header-nav {
     clear: both;
   }
-}
-.header-nav a:after {
-  display: none;
-}
-.header-nav a:hover {
-  text-decoration: underline;
-}
-.header-nav a.active {
-  font-weight: bold;
-}
-.header-nav a.active:before {
-  position: absolute;
-  content: ">";
-  margin-left: -0.75em;
-  margin-top: -0.05em;
-}
-.header-nav ul {
-  padding-left: 0;
 }
 .footer {
   margin-top: 75px;
@@ -1426,13 +1428,6 @@ a:not(.silent-hover):hover {
 .footer-nav {
   margin: -3.75px 0 22.5px;
   margin: -0.25rem 0 1.5rem;
-  text-transform: uppercase;
-}
-.footer-nav a:after {
-  display: none;
-}
-.footer-nav a:hover {
-  text-decoration: underline;
 }
 @media (min-width: 47em) {
   .footer-nav {
