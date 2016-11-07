@@ -1156,8 +1156,36 @@ a.silent {
   color: inherit !important;
   text-decoration: none;
 }
-a:not(.silent-hover):hover {
+a:hover {
   text-decoration: none;
+}
+.link-underline,
+.prose a,
+a.title-type,
+.title-type a {
+  text-decoration: underline;
+}
+.has-cssgradients .link-underline,
+.has-cssgradients .prose a,
+.has-cssgradients a.title-type,
+.has-cssgradients .title-type a {
+  text-decoration: none;
+  background-image: -webkit-linear-gradient(rgba(18, 18, 18, 0) 50%, rgba(18, 18, 18, 0.5) 50%);
+  background-image: linear-gradient(rgba(18, 18, 18, 0) 50%, rgba(18, 18, 18, 0.5) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 0.9em;
+}
+.link-underline:hover,
+.prose a:hover,
+a.title-type:hover,
+.title-type a:hover {
+  text-decoration: none;
+  background-image: none;
+}
+.has-cssgradients a.title-type,
+.has-cssgradients .title-type a {
+  background-position: 0 1.2em;
 }
 /* Brand Styles */
 .brand-one {
@@ -1252,6 +1280,7 @@ a:not(.silent-hover):hover {
   padding: 3.75px 0;
   padding: 0.25rem 0;
   text-decoration: none;
+  background: none !important;
 }
 .nav-list a:hover {
   text-decoration: underline;
@@ -1278,13 +1307,6 @@ a:not(.silent-hover):hover {
 .prose .links-list li:before,
 .links-list li:before {
   display: none;
-}
-.prose .links-list a,
-.links-list a {
-  padding: 2.25px  4.5px;
-  padding: 0.15rem  0.3rem;
-  margin: -2.25px -4.5px;
-  margin: -0.15rem -0.3rem;
 }
 .prose .links-list {
   margin-top: -18.75px;

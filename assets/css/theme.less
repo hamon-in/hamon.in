@@ -25,9 +25,30 @@ a.silent {
     color: inherit !important;
     text-decoration: none;
 }
-a:not(.silent-hover):hover {
-    // transition: all 0.2s;
+a:hover {
     text-decoration: none;
+}
+.background-underline(@opacity: 50%) {
+    text-decoration: underline;
+    .has-cssgradients & {
+        text-decoration: none;
+        background-image: linear-gradient(fade(@brand-two, 0) 50%, fade(@brand-two, @opacity) 50%);
+        background-repeat: repeat-x;
+        background-size: 2px 2px;
+        background-position: 0 0.9em;
+    }
+}
+.link-underline {
+    .background-underline;
+    &:hover {
+        text-decoration: none;
+        background-image: none;
+    }
+}
+a.title-type,
+.title-type a {
+    &:extend(.link-underline all);
+    .has-cssgradients & { background-position: 0 1.2em; }
 }
 
 
