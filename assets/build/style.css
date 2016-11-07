@@ -1047,6 +1047,24 @@ p + .collapse {
   margin-bottom: 0.5rem;
   font-weight: normal;
 }
+.title-two a {
+  text-decoration: underline;
+}
+.has-cssgradients .title-two a {
+  text-decoration: none;
+  background-image: -webkit-linear-gradient(rgba(130, 93, 78, 0) 50%, rgba(130, 93, 78, 0.4) 50%);
+  background-image: linear-gradient(rgba(130, 93, 78, 0) 50%, rgba(130, 93, 78, 0.4) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 0.9em;
+}
+.title-two a:hover {
+  text-decoration: none;
+  background-image: none;
+}
+.has-cssgradients .title-two a {
+  background-position: 0 1.3em;
+}
 .title-three,
 .prose h4 {
   text-transform: uppercase;
@@ -1152,10 +1170,6 @@ a:visited {
   color: inherit;
   text-decoration: underline;
 }
-a.silent {
-  color: inherit !important;
-  text-decoration: none;
-}
 a:hover {
   text-decoration: none;
 }
@@ -1186,6 +1200,13 @@ a.title-type:hover,
 .has-cssgradients a.title-type,
 .has-cssgradients .title-type a {
   background-position: 0 1.2em;
+}
+a.silent {
+  color: inherit !important;
+  text-decoration: none;
+}
+.has-cssgradients a.silent {
+  background: none;
 }
 /* Brand Styles */
 .brand-one {

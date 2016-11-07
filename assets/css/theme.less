@@ -21,35 +21,37 @@ a:visited {
     color: inherit;
     text-decoration: underline;
 }
-a.silent {
-    color: inherit !important;
-    text-decoration: none;
-}
 a:hover {
     text-decoration: none;
 }
-.background-underline(@opacity: 50%) {
+.background-underline(@color: @brand-two, @opacity: 50%) {
     text-decoration: underline;
     .has-cssgradients & {
         text-decoration: none;
-        background-image: linear-gradient(fade(@brand-two, 0) 50%, fade(@brand-two, @opacity) 50%);
+        background-image: linear-gradient(fade(@color, 0) 50%, fade(@color, @opacity) 50%);
         background-repeat: repeat-x;
         background-size: 2px 2px;
         background-position: 0 0.9em;
     }
-}
-.link-underline {
-    .background-underline;
     &:hover {
         text-decoration: none;
         background-image: none;
     }
+}
+.link-underline {
+    .background-underline;
 }
 a.title-type,
 .title-type a {
     &:extend(.link-underline all);
     .has-cssgradients & { background-position: 0 1.2em; }
 }
+a.silent {
+    color: inherit !important;
+    text-decoration: none;
+    .has-cssgradients & { background: none; }
+}
+
 
 
 
