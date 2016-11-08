@@ -5,7 +5,9 @@ layout: base
 <article>
   <header class="page-header">
     <h4 class="title-one">
-      Article
+      <a class="silent" href="{{ site.baseurl | append: page.url }}">
+        Article
+      </a>
     </h4>
     <h1 class="size-xlarge prose-leading page-caption prose-type embed-spacer">
       {{ page.title | smartify }}
@@ -24,9 +26,11 @@ layout: base
         <br>
       {% endif %}
       <span class="title-type size-xsmall">
-        <time>
-          {{ page.date | date: '%b %-d, %Y' }}
-        </time>
+        <a class="silent" href="{{ site.baseurl | append: page.url }}">
+          <time>
+            {{ page.date | date: '%b %-d, %Y' }}
+          </time>
+        </a>
         {% if page.topics %}
           in
           {% for topic_id in page.topics %}

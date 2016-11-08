@@ -4,15 +4,7 @@ layout: base
 
 
 <article>
-  <header class="page-header">
-    <h2 class="title-one">
-      {{ page.title }}
-    </h2>
-    
-    <div class="page-caption size-xlarge">
-      {{ page.brief | markdownify }}
-    </div>
-  </header>
+  {% include page_header.liquid %}
   
   <section class="wrapper">
     {{ content }}

@@ -1,0 +1,11 @@
+<header class="page-header">
+  <h2 class="title-one">
+    <a class="silent" href="{{ site.baseurl | append: page.url }}">
+      {{ include.title | default: page.title }}
+    </a>
+  </h2>
+  
+  <div class="page-caption size-xlarge">
+    {{ include.brief | default: page.brief | markdownify }}
+  </div>
+</header>
