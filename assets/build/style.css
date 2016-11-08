@@ -917,7 +917,7 @@ code,
   font-family: gt-pressura-mono, GT Pressura Mono, monospace;
 }
 code {
-  background-color: #f6f6f6;
+  background-color: #eeeeee;
   padding: 0 0.2em 0.1em;
 }
 /* Helpers */
@@ -1139,10 +1139,9 @@ p + .collapse {
   margin: 0;
 }
 .prose pre {
-  background: #f6f6f6;
-  padding: 15px 22.5px;
-  padding: 1rem 1.5rem;
-  overflow-x: scroll;
+  background: #eeeeee;
+  padding: 7.5px 11.25px;
+  padding: 0.5rem 0.75rem;
   -webkit-overflow-scrolling: touch;
 }
 .prose pre code {
