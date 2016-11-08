@@ -117,11 +117,13 @@ foss:
       FOSS
     </h2>
     
-    <div class="page-caption size-xlarge">
+    <div class="page-caption prose size-xlarge embed-spacer">
       {{ page.foss.brief | markdownify }}
     </div>
     
-    {% include projects_listing.liquid projects=page.foss.projects %}
+    <div class="embed-spacer">
+      {% include projects_listing.liquid projects=page.foss.projects %}
+    </div>
     
     {% if page.foss.orgs %}
       <h2 class="title-three size-small">
