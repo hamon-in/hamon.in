@@ -1046,6 +1046,7 @@ p + .collapse {
   margin-bottom: 7.5px;
   margin-bottom: 0.5rem;
   font-weight: normal;
+  line-height: 1.3;
 }
 .title-two a {
   text-decoration: underline;
@@ -1063,7 +1064,7 @@ p + .collapse {
   background-image: none;
 }
 .has-cssgradients .title-two a {
-  background-position: 0 1.3em;
+  background-position: 0 1.25em;
 }
 .title-three,
 .prose h4 {
