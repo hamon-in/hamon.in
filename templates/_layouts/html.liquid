@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>{% if page.title %}{{ page.title | smartify }} - {% endif %}{{ site.name }}</title>
+  <link rel="canonical" href="{{ site.baseurl | append: page.url }}">
   
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {% if jekyll.environment == "production" %}
@@ -12,8 +13,6 @@
   {% else %}
     <link rel="stylesheet" href="{{ site.baseurl | append: '/build/style.min.css?' | append: site.data.css_hashsum }}" type="text/css" data-instant-track>
   {% endif %}
-  <link rel="stylesheet" href="{{ site.baseurl | append: '/img/fonts/gtpressuramono.css' }}" type="text/css" data-instant-track>
-  <link rel="stylesheet" href="{{ site.baseurl | append: '/img/fonts/gtsectra.css' }}" type="text/css" data-instant-track>
   <script src="{{ site.baseurl | append:'/js/libs/modernizr-custom.js' }}" data-no-instant data-instant-track></script>
   
   <!--

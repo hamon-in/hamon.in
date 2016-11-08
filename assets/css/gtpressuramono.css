@@ -1,0 +1,19 @@
+/* GT Pressura Mono */
+
+@font-face {
+    font-family: gt-pressura-mono;
+    font-style: normal;
+    src: url('../img/fonts/GT-Pressura-Mono-Regular.eot');
+    src: url('../img/fonts/GT-Pressura-Mono-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../img/fonts/GT-Pressura-Mono-Regular.woff') format('woff'),
+         url('../img/fonts/GT-Pressura-Mono-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: gt-pressura-mono;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../img/fonts/GT-Pressura-Mono-Bold.eot');
+    src: url('../img/fonts/GT-Pressura-Mono-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../img/fonts/GT-Pressura-Mono-Bold.woff') format('woff'),
+         url('../img/fonts/GT-Pressura-Mono-Bold.ttf')  format('truetype');
+}
