@@ -1208,6 +1208,13 @@ a.silent {
 .has-cssgradients a.silent {
   background: none;
 }
+hr {
+  border: none;
+  border-top: 1px solid #c4c4c4;
+  width: 22.5px;
+  width: 1.5rem;
+  margin-left: 0;
+}
 /* Brand Styles */
 .brand-one {
   color: white;
@@ -1332,6 +1339,21 @@ a.silent {
 .prose .links-list {
   margin-top: -18.75px;
   margin-top: -1.25rem;
+}
+.project-list > li {
+  margin: 7.5px 0;
+  margin: 0.5rem 0;
+}
+.logos-list {
+  margin: 7.5px 0;
+  margin: 0.5rem 0;
+}
+.logos-list li {
+  display: inline-block;
+  max-width: 195px;
+  max-width: 13rem;
+  margin-right: 22.5px;
+  margin-right: 1.5rem;
 }
 .testimonial {
   margin-top: 45px;

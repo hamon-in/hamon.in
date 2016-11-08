@@ -1,0 +1,26 @@
+{% if include.projects %}
+  <h2 class="title-three size-small">
+    {{ include.title|default: "Projects" }}
+  </h2>
+  
+  <div class="prose">
+    <ul class="project-list">
+      {% for project in include.projects %}
+        <li>
+          {{ project.title }}
+          {% if project.tech %}
+            <b class="title-label title-type">
+              {{ project.tech | join: ', ' }}
+            </b>
+          {% endif %}
+          {% if project.link %}
+            <br>
+            <a class="title-type size-small" href="{{ project.link }}">
+              {% include prettyurl.liquid url=project.link %}
+            </a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

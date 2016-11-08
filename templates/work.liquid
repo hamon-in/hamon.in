@@ -40,19 +40,32 @@ clients:
         title: Expand existing infrastructure and applications used to deliver a country wide ad network based on raspberry Pi systems.
         tech:
           - Python
-  -
-    title: FOSS Contributions
-    projects:
-      - title: Command line invoice and timesheet management
-        link: http://github.com/hamon-in/invoice
-      - title: Low level port of the python psutil library.
-        link: http://github.com/hamon-in/cpslib
+
+foss:
+  brief: |
+    We maintain and contribute to open source projects as well as
+    support FOSS organisations.
+    
+    *[FOSS]:Free and open-source software
+  
+  projects:
+    - title: Command line invoice and timesheet management
+      link: http://github.com/hamon-in/invoice
+    - title: Low level port of the python psutil library.
+      link: http://github.com/hamon-in/cpslib
+      tech:
+        - Python
+  
+  orgs:
+    - title: Free Software Foundation
+      logo: /img/fsf-logo.svg
+      link: http://www.fsf.org/
 
 ---
 
 
 
-<ul>
+<ul class="teaser-spacer clearfix">
   {% for client in page.clients %}
     <li class="teaser-spacer">
       <article>
@@ -66,31 +79,7 @@ clients:
           {% endif %}
         </h1>
         
-        {% if client.projects %}
-          <h2 class="title-three size-small">
-            Projects
-          </h2>
-          
-          <div class="prose">
-            <ul>
-              {% for project in client.projects %}
-                <li>
-                  {{ project.title }}
-                  {% if project.tech %}
-                    <b class="title-label title-type">
-                      {{ project.tech | join: ', ' }}
-                    </b>
-                  {% endif %}
-                  {% if project.link %}
-                    <a class="title-type size-small" href="{{ project.link }}">
-                      {% include prettyurl.liquid url=project.link %}
-                    </a>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
+        {% include projects_listing.liquid projects=client.projects %}
         
         {% if client.testimonial %}
           <div class="testimonial">
@@ -120,3 +109,35 @@ clients:
   {% endfor %}
 </ul>
 
+
+{% if page.foss %}
+  <hr class="teaser-spacer">
+  <section class="teaser-spacer">
+    <h2 class="title-one">
+      FOSS
+    </h2>
+    
+    <div class="page-caption size-xlarge">
+      {{ page.foss.brief | markdownify }}
+    </div>
+    
+    {% include projects_listing.liquid projects=page.foss.projects %}
+    
+    {% if page.foss.orgs %}
+      <h2 class="title-three size-small">
+        We Support
+      </h2>
+      <ul class="logos-list">
+        {% for org in page.foss.orgs %}
+          <li>
+            <figure class="contain-width centered">
+              <a href="{{ org.link }}">
+                <img alt="{{ org.title }}" src="{{ site.baseurl | append: org.logo }}">
+              </a>
+            </figure>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+{% endif %}
