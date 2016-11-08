@@ -7,12 +7,16 @@
   <title>{% if page.title %}{{ page.title | smartify }} - {% endif %}{{ site.name }}</title>
   <link rel="canonical" href="{{ site.baseurl | append: page.url }}">
   
-  <meta name="viewport" content="width=device-width,initial-scale=1">
   {% if jekyll.environment == "production" %}
-    <link rel="stylesheet" href="{{ site.baseurl | append: '/build/style.min.' | append: site.data.css_hashsum | append: '.css' }}" type="text/css" data-instant-track>
+    {% assign css_url = site.baseurl | append: '/build/style.min.' | append: site.data.css_hashsum | append: '.css' %}
+    {% assign js_url = site.baseurl | append:'/build/app.min.' | append: site.data.js_hashsum | append: '.js' %}
   {% else %}
-    <link rel="stylesheet" href="{{ site.baseurl | append: '/build/style.min.css?' | append: site.data.css_hashsum }}" type="text/css" data-instant-track>
+    {% assign css_url = site.baseurl | append: '/build/style.min.css?' | append: site.data.css_hashsum %}
+    {% assign js_url = site.baseurl | append:'/build/app.min.js?' | append: site.data.js_hashsum %}
   {% endif %}
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{{ css_url }}" type="text/css" data-instant-track>
   <script src="{{ site.baseurl | append:'/js/libs/modernizr-custom.js' }}" data-no-instant data-instant-track></script>
   
   <!--
@@ -35,10 +39,6 @@
   <!--[if lte IE 8]>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" data-no-instant data-instant-track></script>
   <![endif]-->
-  {% if jekyll.environment == "production" %}
-    <script src="{{ site.baseurl | append:'/build/app.min.' | append: site.data.js_hashsum | append: '.js' }}" data-no-instant data-instant-track></script>
-  {% else %}
-    <script src="{{ site.baseurl | append:'/build/app.min.js?' | append: site.data.js_hashsum }}" data-no-instant data-instant-track></script>
-  {% endif %}
+  <script src="{{ js_url }}" data-no-instant data-instant-track></script>
 </body>
 </html>
