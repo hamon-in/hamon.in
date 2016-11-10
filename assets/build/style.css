@@ -1265,8 +1265,8 @@ hr {
 }
 .nav-list a {
   display: block;
-  padding: 3.75px 0;
-  padding: 0.25rem 0;
+  padding: 7.5px 0;
+  padding: 0.5rem 0;
   text-decoration: none;
   background: none !important;
 }
@@ -1376,7 +1376,7 @@ hr {
     position: absolute;
   }
 }
-@media (min-width: 47em) and (min-height: 22em) {
+@media (min-width: 47em) and (min-height: 26em) {
   .header-contents {
     position: fixed;
     z-index: 100;
