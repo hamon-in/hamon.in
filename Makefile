@@ -7,7 +7,7 @@ install:
 	gem install jekyll -v '3.2.0'
 
 deploy:
-	JEKYLL_ENV=prod jekyll build
+	JEKYLL_ENV=production jekyll build
 	rsync -rvL --rsync-path="sudo rsync" _site/  shamlik@hamon.in:/var/www/html/hamon.in
 	ssh -t  shamlik@hamon.in 'sudo service nginx restart'
 
