@@ -9,5 +9,5 @@ install:
 deploy:
 	jekyll build
 	rsync -rvL --rsync-path="sudo rsync" _site/  shamlik@hamon.in:/var/www/html/hamon.in
-	ssh -t  shamlik@hamon.in 'sudo service nginx restart'
+
 
