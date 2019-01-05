@@ -2,9 +2,18 @@
 layout: base
 
 body: |
-  HAMON develops cutting edge software built on solid foundations. We deliver reliable solutions with predictable schedules. Our team has over a decade of experience in the industry.
+  HAMON creates custom cutting edge software that powers innovation.
   
-  We specialise in IoT infrastructure, device management and automation.
+  Next time you're looking for advanced technology expertise to build solutions that power your business or make your vision a reality, please talk to us. We have been helping startups and established business since 2013.
+
+icon:
+  alt: Icon here
+  src: /img/placeholder.png
+
+clients:
+     INBE       /img/client-placeholder.png
+     Vyoma      /img/client-placeholder.png
+     Eunimart    /img/client-placeholder.png
 
 email: contact@hamon.in
 
@@ -18,80 +27,37 @@ email: contact@hamon.in
   <section class="page-header">
     <div class="page-caption size-large">
       {{ page.body | markdownify }}
-      
-      <p class="title-type size-regular">
-        <a href="{{ site.baseurl | append: about_page.url }}">More about us&nbsp;&gt;</a>
-      </p>
     </div>
   </section>
   
+  <section class="wrapper">
+    <h3 class="size-regular title-four">
+      Services, Technologies, Domains
+    </h3>
+    <div>
+    Client1 Client2 Client3 Client4
+                     
+    </div>
+  </section>
+
   
   <section class="wrapper">
     <h3 class="size-regular title-four">
-      Clients &amp; Projects
+    Culture
     </h3>
-    
-    <ul>
-      {% for client in work_page.clients %}
-        <li class="embed-spacer">
-          <h4 class="title-three">
-            {{ client.title }}
-          </h4>
-          <div class="prose">
-            <ul>
-              {% for project in client.projects %}
-                <li>
-                  {{ project.title }}
-                  {% if project.tech %}
-                    <b class="title-label title-type">
-                      {{ project.tech | join: ', ' }}
-                    </b>
-                  {% endif %}
-                  {% if project.link %}
-                    <a class="title-type size-small" href="{{ project.link }}">
-                      {% include prettyurl.liquid url=project.link %}
-                    </a>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-            {% if client.link %}
-              <p class="collapse">
-                <a class="title-type size-small" href="{{ client.link }}">
-                  {% include prettyurl.liquid url=client.link %}
-                </a>
-              </p>
-            {% endif %}
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-    <p class="title-type size-regular">
-      <a href="{{ site.baseurl | append: work_page.url }}">Our work&nbsp;&gt;</a>
-    </p>
+    <div>
+    Our name is inspired by the differential hardening technique in traditional Japanese swords. The hamon is the line where the harder steel of the edge meets the stronger steel at the back. We have been combining cutting edge software technologies with trusted and time proven methodologies to build industry grade solutions.
+    </div>
   </section>
-  
-  
-  
+
   <section class="wrapper">
     <h3 class="size-regular title-four">
-      Hire Us
+    Team
     </h3>
-    {% if contact_page.brief %}
-      <div class="prose">
-        {{ contact_page.brief | markdownify }}
-        <p>
-          Get in touch via
-          <a class="title-type size-small" href="mailto:{{ page.email }}">
-            {{ page.email }}</a>
-          .
-        </p>
-      </div>
-    {% endif %}
-    <p class="title-type size-regular">
-      <a class="title-type" href="{{ site.baseurl | append: contact_page.url }}">
-        Contact&nbsp;&gt;
-      </a>
-    </p>
+    <div>
+    The Hamon leadership team has more than 15 years of global software industry experience. We also have a strong cohort of engineers who have been hand selected to ensured culture fit and work with major clients directly.
+    </div>
   </section>
+
+
 </div>
