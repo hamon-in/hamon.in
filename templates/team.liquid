@@ -1,0 +1,71 @@
+---
+layout: page
+permalink: /team/
+
+title: Team
+
+photos:
+  asif:
+    src: /img/asif.jpg
+    alt: Asif ETV
+  noufal:
+    src: /img/noufal.jpg
+    alt: Noufal Ibrahim KV
+
+
+team:
+  - 
+    name: Name 1
+    title: Title 1
+    img: /img/team.jpg
+  - 
+    name: Name 2
+    title: Title 2
+    img: /img/team.jpg
+  - 
+    name: Name 3
+    title: Title 3
+    img: /img/team.jpg
+
+
+
+---
+
+<div>
+<h2 class="title-four"> Leadership </h2>
+<h3 class="title-two"> Noufal Ibrahim </h3>
+      <img alt="{{page.photos.noufal.alt}}" src="{{ site.baseurl | append: page.photos.noufal.src }}"/>
+      <p class="size-small">
+      B.Tech - NIT, Calicut 
+      </p>
+      <p>
+      A technologist with over 15 years of experience in various domains. Have architected and built complex systems. Worked for leading technology organisations like Cisco, Synopsys, and The Internet Archive. 
+      </p><p>
+      Founder of the largest PyCon outside the United States and a well known figure in the Indian technology ecosystem.
+      </p>
+
+
+<h3 class="title-two"> Asif ETV </h3>
+      <img alt="{{page.photos.asif.alt}}" src="{{ site.baseurl | append: page.photos.asif.src }}"/>
+      <p class="size-small">
+      MBA - Haas School of Business, UC Berkley<br/> B.Tech - NIT, Calicut
+      </p>
+      <p>
+      Berkeley (Haas) MBA with more than 15+ years of experience in Business Strategy, Operations, Consulting and Management in High-Tech in the Silicon Valley. 
+      </p><p>
+      Developed and managed products, headed global teams, and executed pioneering go-to-market strategies for multi-billion global businesses.
+      </p>
+<h2 class="title-four"> Our team </h2>
+<ul>
+{% for i in page.team %}
+<li>
+{{i.name}}
+<p class="size-small">{{i.title}}</p>
+<img src="{{ site.baseurl | append: i.img }}"/>
+</li>
+{% endfor %}
+</ul>
+
+</div>
+
+
