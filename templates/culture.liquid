@@ -1,0 +1,93 @@
+---
+
+layout: page
+permalink: /culture/
+
+title: Culture
+
+brief: |
+  We are our values and we take them seriously
+
+foss:
+  brief: |
+    Open source is a big part of work at Hamon.
+
+    We work with the larger developer community to nurture young engineers and improve the overall ecosystem.
+
+    Our engineers contribute back to the ecosystem by answering questions on stack overflow, contributing patches to projects. We also maintain some open source projects ourselves.
+
+    We also support important organisations with the free and open source community.
+
+    This helps us to hone our skillset and stay upto date with modern technology trends.
+  
+  projects:
+    - title: Command line invoice and timesheet management
+      link: http://github.com/hamon-in/invoice
+      tech:
+        - Python
+    - title: Low level port of the python psutil library.
+      link: http://github.com/hamon-in/cpslib
+      tech:
+        - C Python
+  
+  orgs:
+    - title: Free Software Foundation
+      logo: /img/fsf-logo.svg
+      link: http://www.fsf.org/
+
+  
+---
+
+<div>
+<h2 class="title-four"> Core Values </h2>
+<h3 class="title-three"> Excellence </h3>
+We are committed to technical excellence in our work. We make sure that solutions we deliver are well tested, properly architected and highly performant. We consider every piece of software that we develop to be works of art which speak for themselves.
+<h3 class="title-three"> Integrity </h3>
+We're completely transparent about our skills and workflow with our clients. This gives our customers a clear window into how our team collaborates with them to deliver their projects.
+<h3 class="title-three"> Reliability </h3>
+We understand that our clients depend on us for timely delivery of high quality solutions and take this to heart. We make sure that all our clients can consider us to be an extension of their internal teams.
+
+<h2 class="title-four"> Hiring Process </h2>
+<p>
+Our hiring process is tailored to maintaining our core values. Our people define us and we're very careful about whom we hire. 
+</p><p>
+We ensure that the engineers who work with you are ambassadors of our values. All our engineers are hired after a carefully structured filtering and training program. This helps us to maintain the culture and core values of the company.
+</p>
+
+{% if page.foss %}
+  <section class="teaser-spacer">
+    <h2 class="title-four">
+    Community
+    </h2>
+    
+    <div class="page-caption prose embed-spacer">
+      {{ page.foss.brief | markdownify }}
+    </div>
+    
+    <div class="embed-spacer">
+      {% include projects_listing.liquid projects=page.foss.projects %}
+    </div>
+    
+    {% if page.foss.orgs %}
+      <h2 class="title-three size-small">
+        We Support
+      </h2>
+      <ul class="logos-list">
+        {% for org in page.foss.orgs %}
+          <li>
+            <figure class="contain-width centered">
+              <a href="{{ org.link }}">
+                <img alt="{{ org.title }}" src="{{ site.baseurl | append: org.logo }}">
+              </a>
+            </figure>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+{% endif %}
+
+
+</div>
+
+
