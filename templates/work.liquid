@@ -5,7 +5,7 @@ permalink: /work/
 title: Work
 
 brief: |
-   People we've worked with       
+   A selection of our projects
 
 clients:
   -
@@ -73,51 +73,25 @@ foss:
 
 ---
 
+{% assign case_pages = site.pages | where: 'name', 'case_studies.liquid' | first %}
 
-
-<ul class="teaser-spacer clearfix">
-  {% for client in page.clients %}
+<div class="prose">
+<ul class="project-list">
+    {% for project in case_pages.projects %}
     <li class="teaser-spacer">
-      <article>
-        <h1 class="title-four size-regular">
-          {% if client.link %}
-            <a class="silent" href="{{ client.link }}">
-              {{ client.title }}
-            </a>
-          {% else %}
-            {{ client.title }}
-          {% endif %}
-        </h1>
-        
-        {% include projects_listing.liquid projects=client.projects %}
-        
-        {% if client.testimonial %}
-          <div class="testimonial">
-            <blockquote>
-              {{ client.testimonial.body | markdownify }}
-            </blockquote>
-            
-            <div class="testimonial-attribution">
-              <h4>
-                {{ client.testimonial.name }}
-              </h4>
-              <i class="title-type">
-                {{ client.testimonial.designation }},
-                {{ client.testimonial.org }}
-              </i>
-            </div>
-          </div>
-        {% endif %}
-        
-        {% if client.link %}
-          <a class="title-type size-small" href="{{ client.link }}">
-            {% include prettyurl.liquid url=client.link %}
-          </a>
-        {% endif %}
-      </article>
+      <h4 class="title-three"> {{ project.title }} </h4>
+      {{project.brief}} <a href="https://www.google.com"> Read more... </a>
     </li>
-  {% endfor %}
+    {% endfor %}
 </ul>
+</div>
+
+
+
+
+
+
+
 
 
 {% if page.foss %}

@@ -1,0 +1,107 @@
+---
+projects:
+  - 
+   title: Making India's leading dating app safe
+   brief: Hamon worked with QuackQuack.in, one of India's leading dating apps, to protect their platform from malicious users using a custom AI/ML solution.
+   link: https://www.quackquack.in
+   profile: |
+      QuackQuack.in is one of India's leading dating apps with over 4 Million active users. The company has been experiencing phenomenal growth with more than 1000 signups per day. QuackQuack promises its users verified and genuine profiles, interest based matchmaking, and protects it's users from spammers, scammers and fake profiles.
+   problem: |
+      A successful platform attracts malicious users. QuackQuack.in was relying on a team of moderators to make sure that all users on their website were genuine and not malicious. With their tremendous growth, manual moderation of user profiles became error prone and monotonous. To scale their services, QuackQuack.in needed an automated way of identifying problematic signups. They wanted to maintain the high quality user experience without increasing operating costs. 
+
+   solution: |
+      Hamon analysed close to a million user profiles and developed a custom ML model to accurately classify new content. The model was able to detect malicious profiles with 90% accuracy. We also developed a microservice that made the classifier available as a service which could be monitored, retrained and improved over time by our client.
+
+   result: |
+     The model was able to perform better than manual moderators. Several profiles which were incorrectly labelled by the moderation team were correctly classified by the model. The model was also able to properly recognise tricks used by spammers to bypass the moderator queue and trap them appropriately. 
+
+     The company was able to reallocate the moderation budget to other higher value projects.
+
+   technologies:
+      - scikit-learn
+      - pandas
+      - AWS
+      - flask
+      - postgresql
+  -
+   title: Increasing reliability of signboards for a digital ad provider
+   brief: Vyoma Media serves digital ads at public locations throughout India on over 2000 screens. We automated their IoT infrastructure to make the screens reliable, upgradable, and easily monitorable. 
+   link: https://www.vyoma-media.com/
+   profile: |
+      Vyoma is a major player in the Indian digital signage space with over 4 million eyeballs daily at railway and bus stations. The company serves over 500 clients, runs over 2500 campaigns across 17 states, 400 locations and 2000+ displays. 
+   problem: |
+      Vyoma media was looking to expand from 2000 to 5000 screens nationally. However, their deployment time was more than a month. Updates required manual work for deployment and monitoring. Testing had to be done on site and roll backs were time consuming. Often, these displays were in areas with poor internet connectivity.
+   solution: |
+      Hamon build a device management system to remotely manage and monitor the displays from a central dashboard. The ad delivery engine was rebuilt to make it more reliable and flexible. The ad synchronisation pipeline was also re engineered to allow more frequent updates of ads as well as more intelligent playback.
+   result: |
+      The company was able to reduce over 60% manual labour for deployments and monitoring. Deployment times were reduced from a month to a week per city. Over 80% defects were caught before deployment in the test lab. 
+   technologies:
+        - python
+        - shell
+        - mqtt
+        - AWS
+        - Various A/V tools
+  -
+   title: Increasing reliability of signboards for a digital ad provider
+   brief: Vyoma Media serves digital ads at public locations throughout India on over 2000 screens. We automated their IoT infrastructure to make the screens reliable, upgradable, and easily monitorable. 
+   link: https://www.vyoma-media.com/
+   profile: |
+      Vyoma is a major player in the Indian digital signage space with over 4 million eyeballs daily at railway and bus stations. The company serves over 500 clients, runs over 2500 campaigns across 17 states, 400 locations and 2000+ displays. 
+   problem: |
+      Vyoma media was looking to expand from 2000 to 5000 screens nationally. However, their deployment time was more than a month. Updates required manual work for deployment and monitoring. Testing had to be done on site and roll backs were time consuming. Often, these displays were in areas with poor internet connectivity.
+   solution: |
+      Hamon build a device management system to remotely manage and monitor the displays from a central dashboard. The ad delivery engine was rebuilt to make it more reliable and flexible. The ad synchronisation pipeline was also re engineered to allow more frequent updates of ads as well as more intelligent playback.
+   result: |
+      The company was able to reduce over 60% manual labour for deployments and monitoring. Deployment times were reduced from a month to a week per city. Over 80% defects were caught before deployment in the test lab. 
+   technologies:
+        - python
+        - shell
+        - mqtt
+        - AWS
+        - Various A/V tools
+  -
+   title: Increasing reliability of signboards for a digital ad provider
+   brief: Vyoma Media serves digital ads at public locations throughout India on over 2000 screens. We automated their IoT infrastructure to make the screens reliable, upgradable, and easily monitorable. 
+   link: https://www.vyoma-media.com/
+   profile: |
+      Vyoma is a major player in the Indian digital signage space with over 4 million eyeballs daily at railway and bus stations. The company serves over 500 clients, runs over 2500 campaigns across 17 states, 400 locations and 2000+ displays. 
+   problem: |
+      Vyoma media was looking to expand from 2000 to 5000 screens nationally. However, their deployment time was more than a month. Updates required manual work for deployment and monitoring. Testing had to be done on site and roll backs were time consuming. Often, these displays were in areas with poor internet connectivity.
+   solution: |
+      Hamon build a device management system to remotely manage and monitor the displays from a central dashboard. The ad delivery engine was rebuilt to make it more reliable and flexible. The ad synchronisation pipeline was also re engineered to allow more frequent updates of ads as well as more intelligent playback.
+   result: |
+      The company was able to reduce over 60% manual labour for deployments and monitoring. Deployment times were reduced from a month to a week per city. Over 80% defects were caught before deployment in the test lab. 
+   technologies:
+        - python
+        - shell
+        - mqtt
+        - AWS
+        - Various A/V tools
+
+
+---
+
+<article>
+    <h1 class="title-four size-regular">{{ project.title }}</h1>
+     {{ project.profile }}
+    <h2 class="title-three size-regular">The problem</h2>        
+     {{ project.problem }}
+    <h2 class="title-three size-regular">Our solution</h2>        
+     {{ project.solution }}
+    <h2 class="title-three size-regular">The result</h2>        
+     {{ project.result }}
+
+     <br/>         
+     {% if project.technologies %}
+        <b class="title-label title-type">
+          {{ project.technologies | join: ', ' }}
+        </b>
+      {% endif %}
+
+      {% if project.link %}
+        <br>
+        <a class="title-type size-small" href="{{ project.link }}">
+          {% include prettyurl.liquid url=project.link %}
+        </a>
+      {% endif %}
+</article>        
