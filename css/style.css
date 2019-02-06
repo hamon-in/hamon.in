@@ -1,0 +1,746 @@
+/* Font - Primary */
+
+@font-face {
+    font-family: Montserrat-Light;
+    src: url("../fonts/Montserrat/Montserrat-Light.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Montserrat-ExtraBold;
+    src: url("../fonts/Montserrat/Montserrat-ExtraBold.ttf");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: Montserrat-Black;
+    src: url("../fonts/Montserrat/Montserrat-Black.ttf");
+    font-weight: 900;
+}
+
+
+/* Alternate Font */
+
+@font-face {
+    font-family: OpenSans-Light;
+    src: url("../fonts/Open_Sans/OpenSans-Light.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: OpenSans-SemiBold;
+    src: url("../fonts/Open_Sans/OpenSans-SemiBold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: OpenSans-Light;
+    src: url("../fonts/Open_Sans/OpenSans-Bold.ttf");
+    font-weight: 700;
+}
+
+
+/* Temp */
+
+.testArea {
+    height: 768px;
+    background-image: linear-gradient(118deg, #1e47ff, #2a2ca1);
+}
+
+.testArea1 {
+    height: 768px;
+    background-image: linear-gradient(118deg, #ff1e1e, #a12a2a);
+}
+
+
+/* Navigation */
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: #45ab1b;
+}
+
+.nav-text li a {
+    font-family: Montserrat-SemiBold;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.27;
+    letter-spacing: normal;
+    text-align: right;
+    color: #45ab1b;
+}
+
+.nav-text li a:hover {
+    color: #45ab1b !important;
+}
+
+
+/* Home */
+
+.hero-img {
+    background-image: url("../img/Hero_banner_shape@2x.png");
+    /* The image used */
+    background-color: #ffffff;
+    /* Used if the image is unavailable */
+    height: 950px;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+.caption-1 {
+    font-family: Montserrat-Regular;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.42;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+}
+
+.caption {
+    font-family: Montserrat-ExtraBold;
+    font-size: 56px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+}
+
+.caption-2 {
+    font-family: Montserrat-Regular;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+}
+
+.contactBtn {
+    width: 180px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.contactTxt {
+    font-family: Montserrat-SemiBold;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: 0.7px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #31a326;
+}
+
+
+/* All page heros*/
+
+.hero-title {
+    font-family: Montserrat-Black;
+    font-size: 42px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-description {
+    width: 816px;
+    height: 64px;
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.78;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+
+
+/* Services */
+
+.serviceText {
+    font-family: Montserrat-ExtraBold;
+    font-size: 32px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: center;
+    color: #67b806;
+    margin-top: 41px;
+}
+
+.serviceCaption {
+    width: 901px;
+    height: 56px;
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.89;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.serviceTitle h1 {
+    font-family: Montserrat-SemiBold;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.serviceTitle p {
+    width: 387px;
+    height: 125px;
+    font-family: OpenSans-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    text-align: left;
+    color: #838383;
+}
+
+.serviceTitle img {
+    width: 100px;
+    height: 100px;
+}
+
+.learn-more-btn {
+    width: 136px;
+    height: 34px;
+    border-radius: 2px;
+    background-color: #5db40d;
+}
+
+.learn-more-btn-text {
+    font-family: Montserrat-SemiBold;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+/*Service Page*/
+.how-we-work {
+  font-family: Montserrat-Black;
+  font-size: 32px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #67b806;
+}
+
+.how-we-description {
+  font-family: Montserrat-Regular;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  color: #838383;
+}
+
+.funded {
+  font-family: Montserrat-Bold;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+
+/* Work */
+
+.work-bg {
+    background-image: url("../img/work-bg@3x.png");
+    /* The image used */
+    background-color: rgba(216, 216, 216, 0.1);
+    /* Used if the image is unavailable */
+    height: 780px;
+    /* You must set a specified height */
+    background-position: 80% 80%;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+.card-deck {
+    width: 1500px;
+    height: 610px;
+    
+}
+
+.cards {
+    border-radius: 8px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-body{
+  height: 80px;
+}
+
+.work-name {
+    font-family: Montserrat-SemiBold;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.work-offering {
+    font-family: Montserrat-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.work-offering-text {
+    font-family: Montserrat-SemiBold;
+    font-weight: 500;
+    color: #54b112;
+}
+
+
+.work-pointer ul {
+    list-style-image: url("../img/work/bullet.svg");
+    }
+
+.work-pointer li {
+    padding-top: 10px;
+    }
+
+
+.work-content {
+    font-family: OpenSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
+
+.card-body a {
+    font-family: Montserrat-SemiBold;
+      font-size: 12px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: 0.6px;
+      text-align: center;
+      color: #000000;
+}
+
+.work-view-more { 
+  background-color: #32a426;
+  font-family: Montserrat-SemiBold;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-align: center;
+  color: #ffffff;
+
+  width: 240px;
+  height: 60px;
+  border-radius: 4px;
+  border-width: 2px;
+    
+}
+
+/* Work page*/
+.work-title {
+  font-family: Montserrat-Bold;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.45;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.work-text {
+  font-family: OpenSans-Regular;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.work-btn-text {
+    font-family: Montserrat-SemiBold;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+
+/* Team */
+.founder {
+  font-family: Montserrat-SemiBold;
+  font-size: 22px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #5db40e;
+}
+
+.founder-designation {
+  font-family: Montserrat-SemiBold;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+.founder-know-more {
+    font-family: Montserrat-Bold;
+      font-size: 12px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #4faf15;
+}
+
+.team-card {
+    width: 469px;
+}
+
+/* Rounded image*/
+
+.img-circle {
+    border-radius: 50%;
+}
+.img-circle {
+    border-radius: 1;
+}
+
+.ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
+}
+.img-circle {
+    border-radius: 50%;
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Team page */
+.employee-name {  
+  font-family: Montserrat-SemiBold;
+  font-size: 22px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+
+.employee-designation {
+  font-family: Montserrat-Regular;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #9b9b9b;
+}
+
+
+/* Culture */
+
+.culture-bg {
+    background-color: rgba(216, 216, 216, 0.1);
+}
+
+.culture-title {
+  font-family: Montserrat-Bold;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+
+.culture-content {
+  font-family: Montserrat-Regular;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+/* Culture Page */
+
+.open-source {
+  font-family: Montserrat-Bold;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.45;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.os-lang {
+  font-family: OpenSans;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.project-link {
+  font-family: Montserrat-SemiBold;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+
+/* Contact */
+
+.contact-bg {
+    background-image: url("../img/contact-bg@3x.png");
+    /* The image used */
+    background-color: rgba(216, 216, 216, 0.1);
+    /* Used if the image is unavailable */
+    height: 750px;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+.contact-card {
+    width: 80%;
+    /*height: 580px;*/
+    border-radius: 20px;
+}
+
+.contact-send {
+    width: 136px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #5db40d;
+
+}
+
+
+/*contact page*/
+
+.contact-all {
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.address-title {
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
+
+.address {
+    font-family: Montserrat-Regular;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
+
+.contact-btn-text {
+    font-family: Montserrat-Bold;
+    font-size: 10px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.submit-btn {
+  width: 136px;
+  height: 34px;
+  border-radius: 2px;
+  background-color: #5db40d;
+}
+
+
+/* Footer */
+
+footer {
+    height: 200px;
+    background-color: #ffffff;
+}
+
+.nav-links li a {
+    font-family: Montserrat-SemiBold;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.27;
+    letter-spacing: normal;
+    text-align: right;
+    color: #4a4a4a;
+}
+
+.nav-links li a:hover {
+    color: #45ab1b !important;
+}
+
+.social {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+/* General */
+.section-bg {
+    background-color: #fafafa;
+}

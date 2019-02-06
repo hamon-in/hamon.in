@@ -1,0 +1,70 @@
+/* Navigation */
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: #45ab1b;
+}
+
+/* Hero */
+.hero-img {
+    background-image: url("../img/team-bg.png");
+    /* The image used */
+    background-color: #ffffff;
+    /* Used if the image is unavailable */
+    height: 400px;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+.hero-img> h1 p {
+    color:#45ab1b;
+}
+
+.card {
+    width: 387px;
+    height: 435px;
+    background-color: #5db40e;
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.05);
+}
+
+.card-img-overlay {
+    padding-top: 330px;
+}
+
+.name-board {
+  height: 89px;
+  background-color: #5db40e;
+}
+
+.founder-name {
+  font-family: Montserrat-Bold;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.founder-designation {
+  font-family: Montserrat-Regular;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+
+.employees {
+    background-color: #fafafa;
+}

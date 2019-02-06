@@ -1,0 +1,119 @@
+.testbox {
+    height: auto;
+    background-color:#0000ff;
+}
+
+.row-space {
+    background-color: #ff0000;
+    /*height: 200px;*/
+}
+
+.col-space {
+    background-color: #00ff00;
+    height: auto;
+    color:#000;
+}
+
+.col-space1 {
+    background-color: #ff4395;
+    height: auto;
+    color:#000;
+}
+
+.heading {
+  font-family: Montserrat-Bold;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+.description {
+  font-family: Montserrat-Regular;
+  font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.13;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
+
+.description p {
+    padding-left:20px;
+}
+
+.case-study-title {
+    font-family: Montserrat-ExtraBold;
+      font-size: 32px;
+      font-weight: 800;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.38;
+      letter-spacing: normal;
+      color: #4a4a4a;
+
+}
+
+.company-title {
+    color: #67b806 !important;
+}
+
+.offerings {
+  font-family: Montserrat-Regular;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9b9b9b;
+}
+
+.card {
+    height: auto;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.nav-heading {
+  font-family: Montserrat-Bold;
+  font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.44;
+    letter-spacing: normal;
+    color: #4a4a4a;
+
+}
+
+.side-nav a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-family: OpenSans;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.side-nav ul {
+    list-style-image: url("../img/case_study/bullet.svg");
+}
+
+.current{
+    color: #45ab1b !important;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #979797;
+}

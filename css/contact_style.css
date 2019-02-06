@@ -1,0 +1,44 @@
+/* Navigation */
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: #45ab1b;
+}
+
+/* Hero */
+.hero-img {
+    background-image: url("../img/contact-bg.png");
+    /* The image used */
+    background-color: #ffffff;
+    /* Used if the image is unavailable */
+    height: 400px;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+.hero-img> h1 p {
+    color:#45ab1b;
+}
+
+.fill-out {
+  font-family: Montserrat-Black;
+  font-size: 32px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9b9b9b;
+}
+
+.card {
+    width:469px
+    height: 318px;
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.05);
+}
