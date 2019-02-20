@@ -222,8 +222,6 @@
 }
 
 .serviceCaption {
-    width: 901px;
-    height: 56px;
     font-family: Montserrat-Regular;
     font-size: 18px;
     font-weight: normal;
@@ -248,8 +246,6 @@
 }
 
 .serviceTitle p {
-    width: 387px;
-    height: 125px;
     font-family: OpenSans-Regular;
     font-size: 16px;
     font-weight: normal;
@@ -267,8 +263,6 @@
 }
 
 .learn-more-btn {
-    width: 136px;
-    height: 34px;
     border-radius: 2px;
     background-color: #5db40d;
 }
@@ -326,7 +320,7 @@
     /* The image used */
     background-color: rgba(216, 216, 216, 0.1);
     /* Used if the image is unavailable */
-    height: 780px;
+    /*height: 780px;*/
     /* You must set a specified height */
     background-position: 80% 80%;
     /* Center the image */
@@ -336,20 +330,13 @@
     /* Resize the background image to cover the entire container */
 }
 
-.card-deck {
-    width: 1500px;
-    height: 610px;
-    
-}
-
 .cards {
+    min-height: 500px;
+    max-height: 650px;
     border-radius: 8px;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-.card-body{
-  height: 80px;
-}
 
 .work-name {
     font-family: Montserrat-SemiBold;
@@ -400,7 +387,8 @@
     color: #4a4a4a;
 }
 
-.card-body a {
+
+.cards a {
     font-family: Montserrat-SemiBold;
       font-size: 12px;
       font-weight: 600;
@@ -498,10 +486,6 @@
       line-height: normal;
       letter-spacing: normal;
       color: #4faf15;
-}
-
-.team-card {
-    width: 469px;
 }
 
 /* Rounded image*/
